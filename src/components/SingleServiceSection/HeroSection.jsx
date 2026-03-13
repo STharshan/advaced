@@ -2,17 +2,16 @@ import React from "react";
 
 const HeroSection = () => {
     return (
-        <section className="relative w-[95%] mx-auto rounded-4xl h-screen flex flex-col overflow-hidden bg-[#08060F]">
-            <div className="mt-10"></div>
+        <section className="relative bg-[#08060F]  h-screen flex flex-col overflow-hidden ">
+            <div className="mt-10 w-[95%]  mx-auto rounded-4xl"></div>
             {/* Background Image */}
             <img
                 src="https://framerusercontent.com/images/LmQpQxrCvAgtMxoBkA6UJXf6QA.webp"
                 alt="Porsche Interior"
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-[95%]  mx-auto rounded-4xl h-full object-cover"
             />
 
-            {/* linear */}
-            <div className="absolute inset-0 bg-linear-to-t from-[#08060F] via-[#08060F]/40 to-transparent" />
+            
 
             {/* Content */}
             <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pb-12 mt-auto">
