@@ -8,20 +8,20 @@ import RepairCases from "../common/RepairCases";
 import Banner from "../common/Banner";
 import FAQSection from "../common/FAQSection";
 
-// ✅ Switch this import to change which service is shown
-import {motServiceData} from "../data/mot";
+// Switch this import to change which service is shown
+import motServiceData from "../data/mot.js";
 
 const motPage = () => {
   return (
     <div>
-      <HeroSection      data={motServiceData.hero}         />
-      <BenefitsSection  data={motServiceData.benefits}     />
-      <WhatsIncluded    data={motServiceData.included}     />
-      <PricingSection   data={motServiceData.pricing}      />
+      <HeroSection data={motServiceData.hero} />
+      <BenefitsSection data={motServiceData.benefits} />
+      <WhatsIncluded data={motServiceData.included} />
+      <PricingSection data={motServiceData.pricing} />
       <TestimonialSection data={motServiceData.testimonials} />
-      <RepairCases      data={motServiceData.repairCases}  />
-      <Banner           data={motServiceData.banner}       />
-      <FAQSection       data={motServiceData.faq}          />
+      <RepairCases data={motServiceData.repairCases} />
+      <Banner data={motServiceData.banner} />
+      <FAQSection data={motServiceData.faq} />
     </div>
   );
 };

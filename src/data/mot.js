@@ -1,9 +1,3 @@
-// ============================================================
-//  MOT SERVICE DATA
-//  Duplicate this file (e.g. brakes.js, tyres.js) and change
-//  the values to create a new service page instantly.
-// ============================================================
-
 import { Search, ShieldAlert, BadgeDollarSign, Car } from "lucide-react";
 
 const motServiceData = {
