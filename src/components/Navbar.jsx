@@ -73,7 +73,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-10 font-['Rajdhani'] font-medium text-[#B8C0CC]">
+        <div className="hidden xl:flex items-center gap-10 font-['Rajdhani'] font-medium text-[#B8C0CC]">
           {menuItems.map((item) => (
             <button
               key={item.label}
@@ -86,7 +86,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop CTA */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden xl:flex items-center gap-4">
           <a
             href={`tel:${phoneNumber}`}
             className="p-3 rounded-full border border-white/10 text-white bg-gray-800 hover:bg-[#7C2FC0] transition-all"
@@ -106,7 +106,7 @@ const Navbar = () => {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-white p-2"
+          className="xl:hidden text-white p-2"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
@@ -116,7 +116,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-[#08060F] border-b border-white/10 px-8 py-6 flex flex-col gap-5 font-['Rajdhani'] text-white shadow-2xl">
+        <div className="xl:hidden absolute top-full left-0 w-full bg-[#08060F] border-b border-white/10 px-8 py-6 flex flex-col gap-5 font-['Rajdhani'] text-white shadow-2xl">
           {menuItems.map((item) => (
             <button
               key={item.label}
