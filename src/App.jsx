@@ -4,18 +4,26 @@ import Navbar from "./components/Navbar";
 import ServicePage from "./pages/ServicePage";
 import Footer from "./components/Footer";
 import MotPage from "../src/pages/motpage"
+import ScrollToTop from "./components/ScrollToTop";
+import GDPRConsent from "./components/GDPRButton";
+import PrivacyPolicy from "./components/PrivacyPolicy";
+import TermsConditions from "./components/Term";
 
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/service" element={<ServicePage /> } />
-        <Route path="/motPage" element={< MotPage /> } />
+        <Route path="/services" element={<ServicePage />} />
+        <Route path="/motPage" element={< MotPage />} />
+        <Route path="/terms" element={<TermsConditions />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
       </Routes>
       <Footer />
+      <GDPRConsent />
     </Router>
   );
 }

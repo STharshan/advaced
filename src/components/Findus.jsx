@@ -1,124 +1,213 @@
 import { useState } from "react";
 
 const offices = [
-  { id: 0, city: "San Francisco", country: "USA" },
-  { id: 1, city: "Warsaw", country: "Poland" },
-  { id: 2, city: "Copenhagen", country: "Denmark" },
+  { id: 0, city: "Salford",   country: "Greater Manchester", lat: 53.4875, lng: -2.2901, zoom: 13 },
+  { id: 1, city: "Stockport", country: "Greater Manchester", lat: 53.4106, lng: -2.1575, zoom: 13 },
+  { id: 2, city: "Bolton",    country: "Greater Manchester", lat: 53.5781, lng: -2.4282, zoom: 13 },
+  { id: 3, city: "Wigan",     country: "Greater Manchester", lat: 53.5450, lng: -2.6325, zoom: 13 },
+  { id: 4, city: "Rochdale",  country: "Greater Manchester", lat: 53.6097, lng: -2.1561, zoom: 13 },
+  { id: 5, city: "Oldham",    country: "Greater Manchester", lat: 53.5409, lng: -2.1114, zoom: 13 },
 ];
 
-
-const mapPositions = ["30% 40%", "60% 50%", "50% 30%"];
-
-const mapSrc =
-  "https://cdn.prod.website-files.com/68c9c39b88fdc718ad27d553/68cebb106bbba6272cf7e106_Map.webp";
-
-const PhoneIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M13.832 16.568C14.0385 16.6628 14.2712 16.6845 14.4917 16.6294C14.7122 16.5744 14.9073 16.4458 15.045 16.265L15.4 15.8C15.5863 15.5516 15.8279 15.35 16.1056 15.2111C16.3833 15.0723 16.6895 15 17 15H20C20.5304 15 21.0391 15.2107 21.4142 15.5858C21.7893 15.9609 22 16.4696 22 17V20C22 20.5304 21.7893 21.0391 21.4142 21.4142C21.0391 21.7893 20.5304 22 20 22C15.2261 22 10.6477 20.1036 7.27208 16.7279C3.89642 13.3523 2 8.7739 2 4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2L7 2C7.53043 2 8.03914 2.21071 8.41421 2.58579C8.78928 2.96086 9 3.46957 9 4V7C9 7.31049 8.92771 7.61672 8.78885 7.89443C8.65 8.17214 8.44839 8.41371 8.2 8.6L7.732 8.951C7.54842 9.09118 7.41902 9.29058 7.36579 9.51535C7.31256 9.74011 7.33878 9.97637 7.44 10.184C8.80668 12.9599 11.0544 15.2048 13.832 16.568Z" />
+const LocationPinIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0116 0z" />
+    <circle cx="12" cy="10" r="3" />
   </svg>
 );
 
-const MailIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M22 7L13.009 12.727C12.7039 12.9042 12.3573 12.9976 12.0045 12.9976C11.6517 12.9976 11.3051 12.9042 11 12.727L2 7M4 4L20 4C21.1046 4 22 4.89543 22 6V18C22 19.1046 21.1046 20 20 20H4C2.89543 20 2 19.1046 2 18L2 6C2 4.89543 2.89543 4 4 4Z" />
-  </svg>
-);
+function buildMapUrl({ lat, lng }) {
+  const bbox = 0.04;
+  const left   = (lng - bbox).toFixed(4);
+  const right  = (lng + bbox).toFixed(4);
+  const bottom = (lat - bbox * 0.7).toFixed(4);
+  const top    = (lat + bbox * 0.7).toFixed(4);
+  return (
+    `https://www.openstreetmap.org/export/embed.html` +
+    `?bbox=${left},${bottom},${right},${top}` +
+    `&layer=mapnik` +
+    `&marker=${lat},${lng}`
+  );
+}
 
 export default function Findus() {
   const [activeTab, setActiveTab] = useState(0);
+  const active = offices[activeTab];
 
   return (
     <section
-      className="bg-[#111111] w-full min-h-screen font-sans overflow-hidden"
-      style={{ fontFamily: "'Inter', sans-serif" }}
+      className="w-full min-h-screen overflow-hidden"
+      style={{ background: "#08060F", fontFamily: "'Inter', sans-serif" }}
     >
       <div className="flex flex-col lg:flex-row w-full min-h-screen">
 
-        {/* ───── LEFT PANEL ───── */}
-        <div className="flex flex-col w-full lg:w-[45%] px-8 md:px-12 py-10 min-h-screen">
+        {/* ── LEFT PANEL ── */}
+        <div className="flex flex-col w-full lg:w-[45%] px-6 sm:px-10 md:px-14 py-12 md:py-16 lg:min-h-screen">
 
-          {/* Top: label + heading + desc */}
-          <div className="flex flex-col gap-5 pt-2">
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#e03a2f]" />
-              <span className="text-[#e03a2f] text-[11px] uppercase tracking-[0.18em] font-semibold">
-                offices
-              </span>
-            </div>
-
-            <h2
-              className="text-white font-bold leading-[1.08] tracking-[-0.02em]"
-              style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)" }}
-            >
-              Explore Our Office<br />Locations
-            </h2>
-
-            <p className="text-[#777] text-sm leading-relaxed max-w-85">
-              For specific inquiries, please reach out to our contact
-              representatives at each of our headquarters locations.
-            </p>
+          {/* Label */}
+          <div className="flex items-center gap-2 mb-6">
+            <span className="w-2 h-2 rounded-full" style={{ background: "#FF6D00" }} />
+            <span className="text-[11px] uppercase tracking-[0.2em] font-semibold" style={{ color: "#FF6D00" }}>
+              Coverage Areas
+            </span>
           </div>
 
-          {/* Spacer pushes cards to bottom */}
-          <div className="flex-1" />
+          {/* Heading */}
+          <h2
+            className="font-bold leading-[1.06] mb-5"
+            style={{ fontSize: "clamp(2rem, 4.5vw, 3.4rem)", color: "#FFFFFF", letterSpacing: "-0.02em" }}
+          >
+            Areas We<br />
+            <span style={{
+              background: "linear-gradient(90deg, #FF6D00 0%, #D4187A 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}>
+              Cover
+            </span>
+          </h2>
 
-          {/* Bottom: Contact Cards */}
-        
+          {/* Description */}
+          <p className="text-sm leading-relaxed mb-10 max-w-sm" style={{ color: "#B8C0CC" }}>
+            We proudly serve customers across Greater Manchester and surrounding
+            areas. Select a location to explore it on the live map.
+          </p>
+
+          {/* Area Cards Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-3">
+            {offices.map((office) => {
+              const isActive = activeTab === office.id;
+              return (
+                <button
+                  key={office.id}
+                  onClick={() => setActiveTab(office.id)}
+                  className="flex flex-col items-start gap-1 px-4 py-3 rounded-xl text-left transition-all duration-300 border"
+                  style={{
+                    background: isActive
+                      ? "linear-gradient(135deg, rgba(255,109,0,0.18) 0%, rgba(212,24,122,0.18) 100%)"
+                      : "rgba(255,255,255,0.04)",
+                    borderColor: isActive ? "rgba(255,109,0,0.55)" : "rgba(255,255,255,0.08)",
+                    boxShadow: isActive ? "0 0 18px rgba(255,109,0,0.12)" : "none",
+                  }}
+                >
+                  <div className="flex items-center gap-1.5">
+                    <span style={{ color: isActive ? "#FF6D00" : "#B8C0CC", transition: "color 0.3s" }}>
+                      <LocationPinIcon />
+                    </span>
+                    <span className="text-sm font-semibold" style={{ color: isActive ? "#FFFFFF" : "#B8C0CC", transition: "color 0.3s" }}>
+                      {office.city}
+                    </span>
+                  </div>
+                  <span
+                    className="text-[11px] pl-4.5"
+                    style={{ color: isActive ? "rgba(255,184,0,0.8)" : "rgba(184,192,204,0.55)", transition: "color 0.3s" }}
+                  >
+                    {office.country}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Active badge */}
+          <div
+            className="mt-8 flex items-center gap-2.5 px-4 py-2.5 rounded-xl self-start"
+            style={{ background: "rgba(255,109,0,0.1)", border: "1px solid rgba(255,109,0,0.25)" }}
+          >
+            <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: "#FF6D00" }} />
+            <span className="text-xs font-medium" style={{ color: "#FF6D00" }}>
+              Viewing: {active.city}
+            </span>
+          </div>
         </div>
 
-        {/* ───── RIGHT PANEL: MAP ───── */}
-        <div className="flex flex-col w-full lg:w-[55%] min-h-[50vh] lg:min-h-screen">
+        {/* ── RIGHT PANEL: MAP ── */}
+        <div className="flex flex-col w-full lg:w-[55%] min-h-[70vw] sm:min-h-120 lg:min-h-screen">
 
-          {/* Tab bar — top of right panel */}
-          <div className="flex items-center gap-2 px-4 py-3">
+          {/* Tab pills */}
+          <div
+            className="flex flex-wrap items-center gap-2 px-4 py-3 shrink-0"
+            style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}
+          >
             {offices.map((office) => (
               <button
                 key={office.id}
                 onClick={() => setActiveTab(office.id)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-medium transition-all duration-200 whitespace-nowrap border ${
-                  activeTab === office.id
-                    ? "bg-[#1e1e1e] border-[#383838] text-white"
-                    : "border-transparent text-[#555] hover:text-[#999]"
-                }`}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 whitespace-nowrap"
+                style={{
+                  background: activeTab === office.id ? "rgba(255,109,0,0.15)" : "transparent",
+                  border: activeTab === office.id ? "1px solid rgba(255,109,0,0.4)" : "1px solid transparent",
+                  color: activeTab === office.id ? "#FF6D00" : "rgba(184,192,204,0.6)",
+                }}
               >
                 <span
-                  className={`w-2 h-2 rounded-full shrink-0 transition-colors duration-200 ${
-                    activeTab === office.id ? "bg-[#e03a2f]" : "bg-[#383838]"
-                  }`}
+                  className="w-1.5 h-1.5 rounded-full shrink-0"
+                  style={{
+                    background: activeTab === office.id ? "#FF6D00" : "rgba(184,192,204,0.35)",
+                    transition: "background 0.2s",
+                  }}
                 />
-                {office.city}, {office.country}
+                {office.city}
               </button>
             ))}
           </div>
 
-          {/* Map — fills remaining height, rounded top-left corner */}
-          <div className="relative flex-1 overflow-hidden rounded-tl-2xl">
-            <img
-              src={mapSrc}
-              alt={`${offices[activeTab].city} map`}
-              className="w-full h-full object-cover transition-all duration-700"
+          {/* Map area */}
+          <div className="relative flex-1 overflow-hidden rounded-tl-2xl lg:rounded-tl-3xl" style={{ minHeight: "320px" }}>
+
+            {/* Live OpenStreetMap iframe — key forces re-mount on tab change so pin updates */}
+            <iframe
+              key={activeTab}
+              src={buildMapUrl(active)}
+              title={`Map of ${active.city}`}
+              width="100%"
+              height="100%"
+              className="absolute inset-0 border-0"
               style={{
-                objectPosition: mapPositions[activeTab],
-                filter: "brightness(0.5) contrast(1.15) grayscale(0.15)",
-                minHeight: "400px",
+                /* Dark theme: invert then hue-rotate to recover natural greens/blues */
+                filter: "invert(0.9) hue-rotate(195deg) saturate(0.9) brightness(0.92)",
+                minHeight: "320px",
               }}
+              loading="lazy"
+              referrerPolicy="no-referrer"
             />
-            {/* Bottom gradient */}
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background:
-                  "linear-gradient(to top, rgba(17,17,17,0.55) 0%, transparent 40%)",
-              }}
-            />
-            {/* Left edge blend */}
+
+            {/* Left blend */}
             <div
               className="absolute inset-y-0 left-0 w-10 pointer-events-none hidden lg:block"
-              style={{
-                background:
-                  "linear-gradient(to right, rgba(17,17,17,0.35), transparent)",
-              }}
+              style={{ background: "linear-gradient(to right, rgba(8,6,15,0.55), transparent)", zIndex: 2 }}
             />
+
+            {/* Bottom info bar */}
+            <div
+              className="absolute bottom-0 left-0 right-0 px-5 py-4 flex items-end justify-between pointer-events-none"
+              style={{
+                background: "linear-gradient(to top, rgba(8,6,15,0.95) 0%, rgba(8,6,15,0.55) 55%, transparent 100%)",
+                zIndex: 2,
+              }}
+            >
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-widest mb-1" style={{ color: "#FF6D00" }}>
+                  Currently viewing
+                </p>
+                <h3
+                  className="font-bold leading-none"
+                  style={{ fontSize: "clamp(1.3rem, 3vw, 2rem)", color: "#FFFFFF", letterSpacing: "-0.02em" }}
+                >
+                  {active.city}
+                </h3>
+                <p className="text-xs mt-1" style={{ color: "rgba(184,192,204,0.7)" }}>
+                  {active.country}
+                </p>
+              </div>
+              <div className="flex flex-col items-end" style={{ color: "rgba(184,192,204,0.7)" }}>
+                <span className="text-2xl font-bold" style={{ color: "#FFB800" }}>
+                  {offices.length}
+                </span>
+                <span className="text-[11px]">areas covered</span>
+              </div>
+            </div>
           </div>
         </div>
 

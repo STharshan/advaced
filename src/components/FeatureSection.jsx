@@ -22,7 +22,7 @@ const BrandFeaturesSection = () => {
       bgColor: "bg-[#7C2FC0]",
       textColor: "text-white",
       labelColor: "text-[#FFB800]", // Chrome Gold highlight
-      img: "https://cdn.prod.website-files.com/62f3719eed276382ac6eeb38/62f37fe8c69d4a2a27b7430d_Footer%20Image.jpg"
+      img: "/a1.jpg"
     },
     {
       id: 2,
@@ -33,16 +33,16 @@ const BrandFeaturesSection = () => {
       bgColor: "bg-[#D4187A]",
       textColor: "text-white",
       labelColor: "text-[#FF6D00]", // Sunset Orange accent
-      img: "https://cdn.prod.website-files.com/62f3719eed276382ac6eeb38/62f3a7570d180f5af9147f37_Hero%20Image.jpg"
+      img: "a2.jpg"
     }
   ];
 
   return (
-    <div className="bg-[#08060F] text-[#B8C0CC] selection:bg-[#FF6D00] selection:text-black">
+    <div id='/' className="bg-[#08060F] text-[#B8C0CC] selection:bg-[#FF6D00] selection:text-black">
 
       {/* Header Section */}
       <header className="py-24 px-8 md:px-20 border-b border-white/5">
-        <h1 className="font-['Bebas_Neue'] pt-10 text-7xl md:text-9xl text-white leading-[0.8]">
+        <h1 className="font-['Bebas_Neue'] pt-8 md:pt-15 text-7xl md:text-9xl text-white leading-[0.8]">
           Features of <br />
           <span className="text-transparent bg-clip-text bg-linear-to-r from-[#7C2FC0] via-[#D4187A] to-[#FF6D00] font-['Exo_2'] italic">
             Our Products

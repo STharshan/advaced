@@ -163,16 +163,16 @@ export default function ServicesSection() {
     <section ref={outerRef} className="relative bg-[#08060F]" style={{ height: "300vh" }}>
 
       {/* Ambient glows */}
-      <div className="sticky top-0 h-screen overflow-hidden pointer-events-none">
+      <div className="sticky top-0 min-h-screen pointer-events-none">
         <div className="absolute top-1/4 left-[5%] w-[30vw] h-[30vw] rounded-full bg-[#7C2FC0]/10 blur-[80px]" />
         <div className="absolute bottom-[10%] right-[10%] w-[25vw] h-[25vw] rounded-full bg-[#D4187A]/10 blur-[80px]" />
       </div>
 
-      <div className="sticky top-0 h-screen -mt-[100vh] flex items-center overflow-hidden">
+      <div className="sticky top-0 min-h-screen -mt-[100vh] pb-20 flex items-center overflow-hidden">
         <div className="w-full max-w-7xl mx-auto px-5 md:px-[clamp(24px,5vw,80px)]">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-9 md:gap-[clamp(40px,6vw,120px)] items-center">
 
-            <div className="flex flex-col gap-5 md:gap-6">
+            <div className="flex flex-col gap-5 pt-20 md:gap-6">
               <div className="flex items-center gap-2.5">
                 <div className="w-7 h-0.5 bg-[#FF6D00]" />
                 <span className="font-['Share_Tech_Mono'] text-[10px] text-[#FF6D00] tracking-[0.26em] uppercase">
@@ -188,7 +188,7 @@ export default function ServicesSection() {
               </h2>
 
               <p className="font-['Rajdhani'] font-medium text-[#B8C0CC] text-sm md:text-base leading-[1.85] max-w-md m-0">
-                At 99club, we go beyond music and lights. We create experiences that
+                At Advanced Autobody Solutions, we go beyond music and lights. We create experiences that
                 bring people together, offering premium services to make every night
                 unforgettable.
               </p>
