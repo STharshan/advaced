@@ -68,7 +68,7 @@ const Navbar = () => {
           <img
             src="/logo.png"
             alt="Advanced Autobody Solutions Logo"
-            className="w-10 h-10 md:w-30 md:h-25 object-contain"
+            className="w-25 h-20 object-contain"
           />
         </Link>
 
