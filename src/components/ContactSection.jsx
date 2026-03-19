@@ -41,8 +41,8 @@ const ContactSection = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const phoneNumber = "94711009464";
-    //447440366913
+    const phoneNumber = "447440366913";
+
     // Build WhatsApp text message
     const message =
       `*New Quote Request: Advanced Autobody*%0A%0A` +
