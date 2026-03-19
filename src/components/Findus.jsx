@@ -37,7 +37,7 @@ export default function Findus() {
   return (
     <section
       className="w-full min-h-screen overflow-hidden"
-      style={{ background: "#08060F", fontFamily: "'Inter', sans-serif" }}
+      style={{ background: "#08060F" }}
     >
       <div className="flex flex-col lg:flex-row w-full min-h-screen">
 
@@ -48,7 +48,7 @@ export default function Findus() {
           <div className="flex items-center gap-2 mb-6">
             <span className="w-2 h-2 rounded-full" style={{ background: "#FF6D00" }} />
             <span className="text-[11px] uppercase tracking-[0.2em] font-semibold" style={{ color: "#FF6D00" }}>
-              Coverage Areas
+              Coverage
             </span>
           </div>
 
@@ -57,21 +57,20 @@ export default function Findus() {
             className="font-bold leading-[1.06] mb-5"
             style={{ fontSize: "clamp(2rem, 4.5vw, 3.4rem)", color: "#FFFFFF", letterSpacing: "-0.02em" }}
           >
-            Areas We<br />
+            Proudly Serving<br />
             <span style={{
               background: "linear-gradient(90deg, #FF6D00 0%, #D4187A 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
             }}>
-              Cover
+              Greater Manchester
             </span>
           </h2>
 
           {/* Description */}
           <p className="text-sm leading-relaxed mb-10 max-w-sm" style={{ color: "#B8C0CC" }}>
-            We proudly serve customers across Greater Manchester and surrounding
-            areas. Select a location to explore it on the live map.
+           Based in Manchester, we provide professional auto body repair services across the surrounding areas. Wherever you are, getting your vehicle to us is easier than you think.
           </p>
 
           {/* Area Cards Grid */}

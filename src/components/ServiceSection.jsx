@@ -1,51 +1,42 @@
 import { useEffect, useRef, useState } from "react";
 import { Music, Crown, CalendarCheck, GlassWater, ArrowRight } from "lucide-react";
 
+import { Wrench, Shield, Car, Paintbrush } from 'lucide-react';
+
 const services = [
   {
     id: 1,
     rotation: "rotate-0",
-    title: "Live Music Experience",
-    desc: "Get lost in the rhythm as our DJs and performers deliver high-energy sets that keep the crowd moving all night long. Each beat, light, and visual is crafted to create an electrifying and unforgettable atmosphere.",
+    title: "Scratch Repair",
+    desc: "Whether it's light wear and tear or a deep key scratch running the full length of your door, we can repair any scratch on any vehicle. Paint-matched and finished to an immaculate standard.",
     borderFrom: "from-[#7C2FC0]", // Deep Purple
     borderTo: "to-[#D4187A]",   // Hot Magenta
-    icon: Music,
+    icon: Paintbrush,
     linearId: "grad1",
     colors: ["#7C2FC0", "#D4187A"]
   },
   {
     id: 2,
     rotation: "rotate-1",
-    title: "VIP Lounge Access",
-    desc: "Relax in style with exclusive seating, personalized service, and premium amenities. Every detail is thoughtfully designed to make your night luxurious, comfortable, and absolutely unforgettable from start to finish.",
+    title: "Bumper Repairs",
+    desc: "Broken, scraped, cracked, or badly dented — we can fix any bumper and bring it back looking completely new again. No matter how bad it looks, we'll make it look like it never happened.",
     borderFrom: "from-[#D4187A]", // Hot Magenta
     borderTo: "to-[#FF6D00]",   // Sunset Orange
-    icon: Crown,
+    icon: Shield,
     linearId: "grad2",
     colors: ["#D4187A", "#FF6D00"]
   },
   {
     id: 3,
     rotation: "rotate-3",
-    title: "Private Event Hosting",
-    desc: "Celebrate birthdays, corporate gatherings, or special occasions in spaces perfectly tailored just for you. Our expert team handles every single detail to ensure your private event is flawless and unforgettable.",
+    title: "Dent Removal",
+    desc: "Using top-of-the-range dent removal equipment, we restore any dent back to its original position with a flawless finish every time. No unnecessary repainting, no filler, just precision repair.",
     borderFrom: "from-[#FF6D00]", // Sunset Orange
     borderTo: "to-[#FFB800]",   // Chrome Gold
-    icon: CalendarCheck,
+    icon: Wrench,
     linearId: "grad3",
     colors: ["#FF6D00", "#FFB800"]
-  },
-  {
-    id: 4,
-    rotation: "rotate-6",
-    title: "Signature Cocktails & Bar",
-    desc: "Savor expertly crafted cocktails that excite your senses and perfectly complement the vibrant club energy. Each drink is thoughtfully designed to enhance your night and leave a lasting, unforgettable impression.",
-    borderFrom: "from-[#FFB800]", // Chrome Gold
-    borderTo: "to-[#FF6D00]",   // Sunset Orange
-    icon: GlassWater,
-    linearId: "grad4",
-    colors: ["#FFB800", "#FF6D00"]
-  },
+  }
 ];
 
 function ServiceCard({ service, translateY, zIndex, opacity, isMobile }) {
@@ -83,12 +74,12 @@ function ServiceCard({ service, translateY, zIndex, opacity, isMobile }) {
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-2 mb-1">
               <div className={`w-5 h-0.5 bg-linear-to-r ${service.borderFrom} ${service.borderTo}`} />
-              <span className="font-['Share_Tech_Mono'] text-[10px] text-[#FF6D00] tracking-widest uppercase">Service</span>
+              <span className=" text-[10px] text-[#FF6D00] tracking-widest uppercase">Service</span>
             </div>
-            <h3 className="text-white text-xl font-['Bebas_Neue'] uppercase tracking-wide leading-tight m-0">
+            <h3 className="text-white text-xl  uppercase tracking-wide leading-tight m-0">
               {service.title}
             </h3>
-            <p className="text-[#B8C0CC] font-['Rajdhani'] text-sm leading-relaxed m-0">
+            <p className="text-[#B8C0CC]  text-sm leading-relaxed m-0">
               {service.desc}
             </p>
           </div>
@@ -111,7 +102,7 @@ function BookNowBtn() {
           : "bg-linear-to-r from-[#7C2FC0] to-[#D4187A] shadow-md shadow-[#7C2FC0]/40 scale-100"
       }`}
     >
-      Book Now
+      Get a Free Quote
       <ArrowRight size={18} strokeWidth={2.5} />
     </a>
   );
@@ -175,22 +166,20 @@ export default function ServicesSection() {
             <div className="flex flex-col gap-5 pt-20 md:gap-6">
               <div className="flex items-center gap-2.5">
                 <div className="w-7 h-0.5 bg-[#FF6D00]" />
-                <span className="font-['Share_Tech_Mono'] text-[10px] text-[#FF6D00] tracking-[0.26em] uppercase">
-                  What we provide
+                <span className=" text-[10px] text-[#FF6D00] tracking-[0.26em] uppercase">
+                  What We Provide
                 </span>
               </div>
 
-              <h2 className="text-white font-['Bebas_Neue'] uppercase tracking-wide leading-none m-0 text-[clamp(2.2rem,3.8vw,3.5rem)]">
-                Our Exclusive<br />
-                <span className="text-transparent bg-clip-text bg-linear-to-r from-[#7C2FC0] to-[#D4187A] font-['Exo_2'] italic">
+              <h2 className="text-white  uppercase tracking-wide leading-none m-0 text-[clamp(2.2rem,3.8vw,3.5rem)]">
+                Our 5-Star Rated<br />
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-[#7C2FC0] to-[#D4187A]  italic">
                   Services
                 </span>
               </h2>
 
-              <p className="font-['Rajdhani'] font-medium text-[#B8C0CC] text-sm md:text-base leading-[1.85] max-w-md m-0">
-                At Advanced Autobody Solutions, we go beyond music and lights. We create experiences that
-                bring people together, offering premium services to make every night
-                unforgettable.
+              <p className=" font-medium text-[#B8C0CC] text-sm md:text-base leading-[1.85] max-w-md m-0">
+                 At Advanced Auto Body Solutions, we go beyond surface-level fixes. Every repair is carried out with professional-grade equipment and a commitment to making your vehicle look exactly as it should perfect.
               </p>
 
               <div className="flex items-center gap-2">

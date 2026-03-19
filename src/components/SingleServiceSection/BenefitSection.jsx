@@ -14,10 +14,10 @@ const BenefitsSection = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-['Bebas_Neue'] text-white mb-4">
+          <h2 className="text-4xl md:text-6xl  text-white mb-4">
             Essential for Your Vehicle
           </h2>
-          <p className="font-['Rajdhani'] text-[#B8C0CC] text-lg md:text-xl">
+          <p className=" text-[#B8C0CC] text-lg md:text-xl">
             Detect issues early and prevent expensive repairs.
           </p>
         </div>
@@ -34,10 +34,10 @@ const BenefitsSection = () => {
                 <div className="w-16 h-16 flex items-center justify-center bg-white rounded-xl mb-6">
                   <Icon size={32} className="text-[#08060F]" />
                 </div>
-                <h3 className="font-['Bebas_Neue'] text-2xl text-white mb-2 uppercase tracking-wide">
+                <h3 className=" text-2xl text-white mb-2 uppercase tracking-wide">
                   {item.title}
                 </h3>
-                <p className="font-['Rajdhani'] text-[#B8C0CC]">
+                <p className=" text-[#B8C0CC]">
                   {item.desc}
                 </p>
               </div>

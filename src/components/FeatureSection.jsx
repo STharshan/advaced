@@ -17,8 +17,8 @@ const BrandFeaturesSection = () => {
   const content = [
     {
       id: 1,
-      title: "Lorem ipsum dolor sit amet,",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor netus mauris velit vulputate lectus aliquam. Faucibus posuere at euismod turpis feugiat porta vestibulum.",
+      title: "About Us",
+      desc: "Advanced Auto Body Solutions was built on one simple belief, every vehicle deserves a repair done properly. Based in the heart of Manchester, we've spent years perfecting our craft, working on everything from everyday family cars to prestige vehicles, always delivering results that speak for themselves.",
       bgColor: "bg-[#7C2FC0]",
       textColor: "text-white",
       labelColor: "text-[#FFB800]", // Chrome Gold highlight
@@ -27,9 +27,9 @@ const BrandFeaturesSection = () => {
     {
       id: 2,
       label: "SECONDARY BRAND // 02",
-      title: "HOT MAGENTA",
+      title: "WHY US",
       hex: "#D4187A",
-      desc: "A bold statement of energy and modern aesthetics designed to stand out in the digital landscape.",
+      desc: "Every job comes with a 100% Satisfaction Guarantee and our Price Match Promise, backed by hundreds of 5-star reviews across Manchester.",
       bgColor: "bg-[#D4187A]",
       textColor: "text-white",
       labelColor: "text-[#FF6D00]", // Sunset Orange accent
@@ -42,10 +42,10 @@ const BrandFeaturesSection = () => {
 
       {/* Header Section */}
       <header className="py-24 px-8 md:px-20 border-b border-white/5">
-        <h1 className="font-['Bebas_Neue'] pt-8 md:pt-15 text-7xl md:text-9xl text-white leading-[0.8]">
-          Features of <br />
-          <span className="text-transparent bg-clip-text bg-linear-to-r from-[#7C2FC0] via-[#D4187A] to-[#FF6D00] font-['Exo_2'] italic">
-            Our Products
+        <h1 className=" pt-8 md:pt-15 text-7xl md:text-9xl text-white leading-[0.8]">
+          Advanced <br />
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-[#7C2FC0] via-[#D4187A] to-[#FF6D00]  italic">
+            Autobody Solutions 
           </span>
         </h1>
       </header>
@@ -65,10 +65,10 @@ const BrandFeaturesSection = () => {
                   key={item.id}
                   className={`flex flex-col justify-center px-10 md:px-24 h-full bg-[#08060F] transition-colors duration-500`}
                 >
-                  <h2 className="font-['Bebas_Neue'] text-6xl md:text-8xl text-white mb-4">
+                  <h2 className=" text-6xl md:text-8xl text-white mb-4">
                     {item.title}
                   </h2>
-                  <p className="font-['Rajdhani'] font-medium text-[#B8C0CC] text-lg md:text-2xl max-w-lg leading-relaxed">
+                  <p className=" font-medium text-[#B8C0CC] text-lg md:text-2xl max-w-lg leading-relaxed">
                     {item.desc}
                   </p>
                 </div>

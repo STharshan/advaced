@@ -58,10 +58,10 @@ export default function Footer() {
 
         {/* Brand */}
         <div className="space-y-4">
-          <h2 className="text-xl font-bold font-['Bebas_Neue'] tracking-wider">
+          <h2 className="text-xl font-bold  tracking-wider">
             Advanced <br /> Autobody Solutions
           </h2>
-          <p className="text-sm text-gray-400 font-['Rajdhani']">
+          <p className="text-sm text-gray-400 ">
             &copy; {currentYear} Advanced Autobody Solutions. <br />
             All rights reserved.
           </p>
@@ -69,15 +69,15 @@ export default function Footer() {
 
         {/* Navigation */}
         <div>
-          <h3 className="text-sm font-['Share_Tech_Mono'] text-[#FF6D00] uppercase tracking-widest mb-6">
+          <h3 className="text-sm  text-[#FF6D00] uppercase tracking-widest mb-6">
             Navigation
           </h3>
-          <ul className="space-y-3 text-sm font-['Rajdhani']">
+          <ul className="space-y-3 text-sm ">
             {menuItems.map((item) => (
               <li key={item.label}>
                 <button
                   onClick={() => handleNavClick(item)}
-                  className="text-gray-400 hover:text-[#FFB800] transition-colors bg-transparent border-none cursor-pointer text-sm text-left p-0 font-['Rajdhani']"
+                  className="text-gray-400 hover:text-[#FFB800] transition-colors bg-transparent border-none cursor-pointer text-sm text-left p-0 "
                 >
                   {item.label}
                 </button>
@@ -88,10 +88,10 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h3 className="text-sm font-['Share_Tech_Mono'] text-[#FF6D00] uppercase tracking-widest mb-6">
+          <h3 className="text-sm  text-[#FF6D00] uppercase tracking-widest mb-6">
             Contact
           </h3>
-          <ul className="space-y-4 text-sm font-['Rajdhani'] text-gray-400">
+          <ul className="space-y-4 text-sm  text-gray-400">
             <li>
               <a
                 href={`tel:${phoneNumber.replace(/\s/g, "")}`}
@@ -125,10 +125,10 @@ export default function Footer() {
 
         {/* Legal */}
         <div>
-          <h3 className="text-sm font-['Share_Tech_Mono'] text-[#FF6D00] uppercase tracking-widest mb-6">
+          <h3 className="text-sm  text-[#FF6D00] uppercase tracking-widest mb-6">
             Legal
           </h3>
-          <ul className="space-y-3 text-sm font-['Rajdhani'] text-gray-400">
+          <ul className="space-y-3 text-sm  text-gray-400">
             <li>
               <Link to="/privacy" className="hover:text-white transition-colors block">
                 Privacy Policy

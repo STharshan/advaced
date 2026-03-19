@@ -3,28 +3,36 @@ import { Plus } from 'lucide-react';
 
 const faqData = [
   {
-    question: "How long does a full body respray take?",
-    answer: "A high-quality full respray typically takes between 7 to 14 days. This depends on the level of prep work required, such as dent removal or rust treatment, to ensure a showroom-standard finish."
+    question: "How long will my repair take?",
+    answer: "Most repairs are completed the same day or within 24 hours depending on the extent of the damage. Scratches and minor dents can often be turned around in just a few hours. We'll always give you a clear timeframe when you book so you're never left guessing."
   },
   {
-    question: "Do you offer a warranty on paintwork and repairs?",
-    answer: "Yes, we provide a comprehensive warranty on all our paintwork and structural repairs. We take pride in our craftsmanship and use premium materials to ensure long-lasting results."
+    question: "Do you offer a guarantee on your repairs?",
+    answer: "Yes. Every repair we carry out comes with a 100% Satisfaction Guarantee. If you're not completely happy with the result, we'll make it right. That's a promise we stand behind on every single job."
   },
   {
-    question: "Can you match the exact color of my car?",
-    answer: "Absolutely. We use advanced computerized color-matching technology alongside manufacturer paint codes to ensure an invisible blend between the new paint and your existing panels."
+    question: "Can you match my car's exact paint colour?",
+    answer: "Absolutely. We use professional paint-matching technology to ensure the repaired area blends seamlessly with the rest of your vehicle. Whether your car is a standard colour or a custom finish, the result will be indistinguishable from the original."
   },
   {
-    question: "Do you work with insurance companies?",
-    answer: "We do. We can provide detailed estimates for insurance claims and work directly with your provider to get your vehicle back on the road as quickly as possible."
+    question: "Do I need to go through my insurance?",
+    answer: "Not at all. Many of our customers choose to pay directly to avoid affecting their no-claims bonus. Our prices are kept fair and affordable specifically so that going through insurance isn't always necessary. We'll give you a transparent quote upfront so you can make the best decision for your situation."
   },
   {
-    question: "Can you repair diamond-cut alloy wheels?",
-    answer: "Yes, we have specialized equipment to refurbish diamond-cut alloys, removing scuffs and scratches before re-cutting the face to restore that original factory shine."
+    question: "How do I get a quote?",
+    answer: "Getting a quote is simple and completely free. You can call us, message us on WhatsApp (+44 7440 366913), fill in the contact form on this page, or send us a photo of the damage via email. We aim to respond to all enquiries as quickly as possible."
   },
   {
-    question: "Do I need to book an appointment for a quote?",
-    answer: "While you can drop by, we recommend booking a quick slot or sending us photos via WhatsApp (+44 7440 366913) for a faster preliminary estimate."
+    question: "Do you offer a price match guarantee?",
+    answer: "Yes. If you've received a like-for-like quote from another reputable bodywork specialist, bring it to us and we'll match it. We believe you should never have to choose between quality and cost — with us, you get both."
+  },
+  {
+    question: "What types of vehicles do you work on?",
+    answer: "We work on all makes and models — from everyday hatchbacks and family cars to prestige vehicles and vans. Whatever you drive, our team has the experience and equipment to handle the repair to the highest standard."
+  },
+  {
+    question: "Where are you located and do you have parking?",
+    answer: "We're based at Unit 10, Orchard Trading Estate, Langley Road South, Manchester. Our workshop is easily accessible and has on-site parking available, so dropping your vehicle off is completely hassle-free."
   }
 ];
 
@@ -36,7 +44,7 @@ const FAQSection = () => {
   };
 
   return (
-    <section id="faq" className="bg-[#08060F] py-12 md:py-24 px-6 md:px-12 lg:px-24 min-h-screen font-['Rajdhani']">
+    <section id="faq" className="bg-[#08060F] py-12 md:py-24 px-6 md:px-12 lg:px-24 min-h-screen">
       <div className="max-w-360 mx-auto w-full">
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-24 items-start">
           
@@ -44,14 +52,14 @@ const FAQSection = () => {
           <div className="flex flex-col gap-4 md:gap-6 sticky top-0 md:top-32 bg-[#08060F] z-20 py-6 md:py-0 w-full border-b border-white/5 md:border-none">
             <div className="flex items-center gap-3">
               <div className="w-2 h-2 rounded-full bg-[#FF6D00]" />
-              <span className="text-[#B8C0CC] text-sm font-['Share_Tech_Mono'] tracking-widest uppercase">
+              <span className="text-[#B8C0CC] text-sm  tracking-widest uppercase">
                 FAQ
               </span>
             </div>
-            <h2 className="text-[2.5rem] md:text-[4.5rem] lg:text-[6rem] font-['Bebas_Neue'] text-white leading-[0.9] tracking-normal">
-              Common <br className="hidden md:block" />
-              <span className="text-[#7C2FC0] italic font-['Exo_2'] block text-[1.8rem] md:text-[3.5rem] lg:text-[4.5rem]">
-                concerns cleared
+            <h2 className="text-[2.5rem] md:text-[4.5rem] lg:text-[6rem] text-white leading-[0.9] tracking-normal">
+             Questions, <br className="hidden md:block" />
+              <span className="text-[#7C2FC0] italic block text-[1.8rem] md:text-[3.5rem] lg:text-[4.5rem]">
+                Answered With Honesty
               </span>
             </h2>
           </div>

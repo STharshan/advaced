@@ -72,7 +72,7 @@ const GallerySection = () => {
   const handleNext = () => activeIndex < projects.length - 1 && scrollToCard(activeIndex + 1);
 
   return (
-    <div id='gallery' className="scroll-m-20 min-h-screen bg-[#08060F] text-white py-12 px-4 sm:px-6 lg:px-8 overflow-hidden font-['Rajdhani']">
+    <div id='gallery' className="scroll-m-20 min-h-screen bg-[#08060F] text-white py-12 px-4 sm:px-6 lg:px-8 overflow-hidden ">
       <div className="max-w-7xl mx-auto p-6">
         
         {/* Header Section */}
@@ -81,9 +81,9 @@ const GallerySection = () => {
             <div className="flex items-center gap-3">
               {/* Sunset Orange Accent Line */}
               <div className="w-12 h-1 bg-[#FF6D00]"></div>
-              <p className="text-sm text-[#B8C0CC] font-['Share_Tech_Mono'] uppercase tracking-[0.3em]">Portfolio</p>
+              <p className="text-sm text-[#B8C0CC]  uppercase tracking-[0.3em]">Portfolio</p>
             </div>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-['Bebas_Neue'] leading-[0.9] tracking-tight">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl  leading-[0.9] tracking-tight">
               Discover Our<br />
               <span className="text-[#7C2FC0]">Completed Projects</span>
             </h1>

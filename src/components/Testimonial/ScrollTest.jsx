@@ -20,14 +20,14 @@ const ScrollingTestimonials = () => {
             className="min-w-75 sm:min-w-88 md:min-w-100 bg-white/5 border border-[#7C2FC0]/20 text-[#B8C0CC] p-8 rounded-2xl shadow-xl backdrop-blur-sm"
           >
             {/* Quote with Brand Silver */}
-            <p className="text-base md:text-lg mb-6 italic leading-relaxed font-['Rajdhani'] font-medium">
+            <p className="text-base md:text-lg mb-6 italic leading-relaxed  font-medium">
               "{t.quote}"
             </p>
             
             {/* Author with Chrome Gold */}
             <div className="flex items-center gap-2">
                <div className="w-1 h-4 bg-[#FF6D00] rounded-full"></div>
-               <p className="font-bold text-sm uppercase tracking-widest text-[#FFB800] font-['Share_Tech_Mono']">
+               <p className="font-bold text-sm uppercase tracking-widest text-[#FFB800] ">
                  {t.author}
                </p>
             </div>

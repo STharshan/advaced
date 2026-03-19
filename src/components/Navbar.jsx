@@ -73,7 +73,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden xl:flex items-center gap-10 font-['Rajdhani'] font-medium text-[#B8C0CC]">
+        <div className="hidden xl:flex items-center gap-10  font-medium text-[#B8C0CC]">
           {menuItems.map((item) => (
             <button
               key={item.label}
@@ -98,7 +98,7 @@ const Navbar = () => {
             href={`https://wa.me/${phoneNumber.replace('+', '')}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#FF6D00] text-[#08060F] font-['Share_Tech_Mono'] px-6 py-3 rounded-full font-bold text-sm uppercase tracking-wide hover:bg-[#FFB800] transition-all"
+            className="bg-[#FF6D00] text-[#08060F]  px-6 py-3 rounded-full font-bold text-sm uppercase tracking-wide hover:bg-[#FFB800] transition-all"
           >
             Ask on WhatsApp
           </a>
@@ -116,7 +116,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="xl:hidden absolute top-full left-0 w-full bg-[#08060F] border-b border-white/10 px-8 py-6 flex flex-col gap-5 font-['Rajdhani'] text-white shadow-2xl">
+        <div className="xl:hidden absolute top-full left-0 w-full bg-[#08060F] border-b border-white/10 px-8 py-6 flex flex-col gap-5  text-white shadow-2xl">
           {menuItems.map((item) => (
             <button
               key={item.label}

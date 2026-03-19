@@ -22,7 +22,7 @@ const FAQSection = ({ data }) => {
   } = data;
 
   return (
-    <section className="bg-[#08060F] py-16 px-4 font-sans">
+    <section className="bg-[#08060F] py-16 px-4">
       <div className="max-w-280 mx-auto">
         <div className="text-center mb-14">
           <h2 className="text-[48px] font-extrabold text-white leading-[1.15] tracking-[-1px] mb-4">
