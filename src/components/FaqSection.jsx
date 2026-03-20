@@ -24,11 +24,11 @@ const faqData = [
   },
   {
     question: "Do you offer a price match guarantee?",
-    answer: "Yes. If you've received a like-for-like quote from another reputable bodywork specialist, bring it to us and we'll match it. We believe you should never have to choose between quality and cost — with us, you get both."
+    answer: "Yes. If you've received a like-for-like quote from another reputable bodywork specialist, bring it to us and we'll match it. We believe you should never have to choose between quality and cost, with us, you get both."
   },
   {
     question: "What types of vehicles do you work on?",
-    answer: "We work on all makes and models — from everyday hatchbacks and family cars to prestige vehicles and vans. Whatever you drive, our team has the experience and equipment to handle the repair to the highest standard."
+    answer: "We work on all makes and models: from everyday hatchbacks and family cars to prestige vehicles and vans. Whatever you drive, our team has the experience and equipment to handle the repair to the highest standard."
   },
   {
     question: "Where are you located and do you have parking?",

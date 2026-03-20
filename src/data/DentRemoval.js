@@ -1,70 +1,70 @@
-import { Search, ShieldAlert, BadgeDollarSign, Car } from "lucide-react";
+import { Search, ShieldCheck, Hammer, Sparkles } from "lucide-react";
 
-const motServiceData = {
+const DentRemovalData = {
   // ─── HERO SECTION ────────────────────────────────────────
   hero: {
     backgroundImage:
       "https://framerusercontent.com/images/LmQpQxrCvAgtMxoBkA6UJXf6QA.webp",
     backLinkLabel: "Services",
     backLinkHref: "/services",
-    title: "Full Diagnosticssssssssss",
+    title: "Dent Removal",
     subtitle:
-      "Full system scan using advanced tools. Detects hidden issues early with clear recommendations.",
-    ctaLabel: "ASK ON WHATSAPP",
+      "Using top of the range dent removal equipment, we restore any dent back to its original position. The finish is always immaculate, no filler, no repainting where it isn't needed.",
+    ctaLabel: "Get a Free Quote",
     ctaHref: "https://www.whatsapp.com/",
   },
 
   // ─── BENEFITS SECTION ────────────────────────────────────
   benefits: {
-    heading: "Essential for Your Vehicle",
-    subheading: "Detect issues early and prevent expensive repairs.",
-    items: [
+    heading: "Precision restoration, no shortcuts",
+    subheading: "Our specialist equipment allows us to work the metal back to its original form without compromising your vehicle's factory paint.",
+    items : [
       {
         icon: Search,
-        title: "Find Issues Early",
-        desc: "Catch issues early.",
+        title: "Any Dent",
+        desc: "Small dings to large panel dents all removed.",
       },
       {
-        icon: ShieldAlert,
-        title: "Damage Prevention",
-        desc: "Avoid major repairs.",
+        icon: ShieldCheck, // Updated to ShieldCheck for 'Paint Safe' context
+        title: "Paint Safe",
+        desc: "No repainting needed in most cases.",
       },
       {
-        icon: BadgeDollarSign,
-        title: "Cost Savings",
-        desc: "Reduce repair costs long-term.",
+        icon: Hammer, // Using Hammer for 'Metal restoration' context
+        title: "No Filler",
+        desc: "Metal restored to original position, not masked.",
       },
       {
-        icon: Car,
-        title: "Safer Driving",
-        desc: "Smoother, safer performance.",
+        icon: Sparkles, // Using Sparkles for 'Immaculate finish' context
+        title: "Immaculate Finish",
+        desc: "Results you won't be able to tell were ever there.",
       },
     ],
   },
 
   // ─── WHAT'S INCLUDED SECTION ─────────────────────────────
-  included: {
-    heading: "What's Included",
-    subheading: "Full diagnostic coverage for every essential system.",
+included: {
+    heading: "Full Dent Removal Process",
+    subheading: "Assessed, repaired, and finished using specialist tools for a perfect result every time.",
     items: [
       {
-        title: "Engine Scan",
+        title: "Dent Assessment",
         description:
-          "Reads fault codes and analyzes overall system performance.",
+          "Size, depth and location evaluated to select the right removal technique.",
         imgSrc:
           "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80&w=800",
       },
       {
-        title: "Electrical Check",
+        title: "Paintless Dent Removal",
         description:
-          "Detects sensor faults and module communication issues reliably.",
+          "Specialist tools used to carefully manipulate the metal back to its original form.",
         imgSrc:
           "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800",
       },
       {
-        title: "Safety Review",
+        title: "Final Inspection",
         description:
-          "Evaluates brakes, suspension, and key mechanical parts thoroughly.",
+          "Panel checked under controlled lighting to ensure a flawless, factory quality finish.",
         imgSrc:
           "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&q=80&w=800",
       },
@@ -154,16 +154,10 @@ const motServiceData = {
     viewAllHref: "/cases",
     items: [
       {
-        title: "Suspension Alignment Correction Case",
-        desc: "Precise alignment and suspension calibration.",
         img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=800",
-        href: "/cases/suspension",
       },
       {
-        title: "Full Engine Diagnostics Repair Case",
-        desc: "Advanced engine diagnostics and repair.",
         img: "https://images.unsplash.com/photo-1484136540910-d66bb475348d?auto=format&fit=crop&q=80&w=800",
-        href: "/cases/engine",
       },
     ],
   },
@@ -180,22 +174,40 @@ const motServiceData = {
 
   // ─── FAQ SECTION ─────────────────────────────────────────
   faq: {
-    heading: "Didn't find what you're",
-    headingHighlight: "looking for?",
-    subheading: "Send us your question and we'll respond shortly.",
+    heading: "Got a question we ",
+    headingHighlight: "haven't answered?",
+    subheading: "Send it over and we'll respond as soon as possible.",
     ctaLabel: "Ask on WhatsApp",
     ctaHref: "https://www.whatsapp.com/",
     itemsLeft: [
-      "How do you diagnose the issue?",
-      "Do I need to leave my car for the whole day?",
-      "Will I get a warranty on the repair?",
+      {
+        q: "How do you diagnose the issue?",
+        a: "We assess the damage in person before any work begins, checking depth, size, and the best repair method to get the right result."
+      },
+      {
+        q: "Do I need to leave my car for the whole day?",
+        a: "Not always. Most repairs can be completed within a few hours. We'll give you a clear time estimate when you book."
+      },
+      {
+        q: "Will I get a warranty on the repair?",
+        a: "Yes, all our repairs come with a workmanship guarantee. If something isn't right, we'll put it right."
+      }
     ],
     itemsRight: [
-      "How much will the repair cost?",
-      "Do you use original or aftermarket parts?",
-      "Do you offer pick-up and drop-off services?",
-    ],
+      {
+        q: "How much will the repair cost?",
+        a: "Every job is different, so we provide a personalised quote after assessing the damage. Get in touch for a free estimate."
+      },
+      {
+        q: "Do you use original or aftermarket parts?",
+        a: "We use quality materials and manufacturer-matched paints to ensure the repair is seamless and long-lasting."
+      },
+      {
+        q: "Do you offer pick-up and drop-off services?",
+        a: "We don't currently offer a collection service, but we're conveniently located and happy to advise on the best time to bring your vehicle in."
+      }
+    ]
   },
 };
 
-export default motServiceData;
+export default DentRemovalData;

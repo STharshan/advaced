@@ -52,7 +52,7 @@ const ContactSection = () => {
       `Repair Type: ${encodeURIComponent(formData.service)}%0A` +
       `Notes: ${encodeURIComponent(formData.note)}%0A%0A` +
       (images.length > 0
-        ? `_${images.length} photo(s) attached — please check images below._`
+        ? `_${images.length} photo(s) attached please check images below._`
         : ``);
 
     // Open WhatsApp chat with the pre-filled message first
@@ -109,7 +109,7 @@ const ContactSection = () => {
 
             <div className="mt-20 lg:mt-40">
               <p className="text-xl md:text-2xl text-white font-semibold leading-relaxed max-w-lg mb-8 italic font-['Exo_2']">
-                "We don't just fix cars — we give people their pride back."
+                "We don't just fix cars, we give people their pride back."
               </p>
               <div className="flex items-center gap-4">
                 <div>
@@ -120,7 +120,7 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* Right — Form */}
+          {/* Right Form */}
           <div className="bg-[#08060F]/60 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 md:p-12 w-full lg:max-w-140 ml-auto shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
             <div className="mb-8">
               <h3 className="text-2xl font-bold text-[#FFB800] mb-2 uppercase tracking-tight">
@@ -198,7 +198,7 @@ const ContactSection = () => {
                   onChange={handleImageChange}
                 />
 
-                {/* Drop zone — only show if under 4 images */}
+                {/* Drop zone only show if under 4 images */}
                 {images.length < 4 && (
                   <button
                     type="button"

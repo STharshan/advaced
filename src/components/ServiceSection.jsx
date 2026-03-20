@@ -19,7 +19,7 @@ const services = [
     id: 2,
     rotation: "rotate-1",
     title: "Bumper Repairs",
-    desc: "Broken, scraped, cracked, or badly dented — we can fix any bumper and bring it back looking completely new again. No matter how bad it looks, we'll make it look like it never happened.",
+    desc: "Broken, scraped, cracked, or badly dented: we can fix any bumper and bring it back looking completely new again. No matter how bad it looks, we'll make it look like it never happened.",
     borderFrom: "from-[#D4187A]", // Hot Magenta
     borderTo: "to-[#FF6D00]",   // Sunset Orange
     icon: Shield,

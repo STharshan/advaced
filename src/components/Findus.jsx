@@ -155,7 +155,7 @@ export default function Findus() {
           {/* Map area */}
           <div className="relative flex-1 overflow-hidden rounded-tl-2xl lg:rounded-tl-3xl" style={{ minHeight: "320px" }}>
 
-            {/* Live OpenStreetMap iframe — key forces re-mount on tab change so pin updates */}
+            {/* Live OpenStreetMap iframe key forces re-mount on tab change so pin updates */}
             <iframe
               key={activeTab}
               src={buildMapUrl(active)}

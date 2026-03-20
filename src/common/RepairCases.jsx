@@ -12,18 +12,6 @@ const CaseCard = ({ title, desc, img, href }) => (
       />
       <div className="absolute inset-0 bg-linear-to-t from-[#08060F]/90 via-[#08060F]/20 to-transparent" />
     </div>
-
-    {/* Content */}
-    <div className="mt-6 space-y-2">
-      <h3 className="text-xl md:text-2xl font-bold text-white transition-colors group-hover:text-[#FFB800]">
-        {title}
-      </h3>
-      <p className="text-[#B8C0CC] text-sm md:text-base">{desc}</p>
-      <div className="flex items-center gap-2 text-[#FF6D00] font-medium text-sm mt-4">
-        <span>View Case</span>
-        <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-      </div>
-    </div>
   </a>
 );
 
@@ -42,7 +30,7 @@ const RepairCases = ({ data }) => {
             {subheading}
           </p>
           <a
-            href={viewAllHref || "#"}
+            href="/#gallery"
             className="inline-block bg-[#7C2FC0] text-white px-8 py-3 rounded-full font-bold hover:bg-[#D4187A] transition-colors"
           >
             {viewAllLabel}
