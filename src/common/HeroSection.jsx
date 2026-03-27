@@ -1,4 +1,5 @@
 import React from "react";
+import Config from "../Config";
 
 const HeroSection = ({ data }) => {
   const {
@@ -39,7 +40,8 @@ const HeroSection = ({ data }) => {
           <p className="text-[#B8C0CC] mb-8 max-w-lg">{subtitle}</p>
 
           <a
-            href={ctaHref}
+           href={`https://wa.me/${Config.whatsappHref}`}
+           target="_blank"
             className="inline-block bg-white text-[#08060F] px-8 py-4 rounded-xl font-bold hover:bg-[#FFB800]"
           >
             {ctaLabel}

@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
-import { ChevronDown, Upload, X, ImagePlus } from 'lucide-react';
+import { ChevronDown, X, ImagePlus } from 'lucide-react';
+import Config from '../Config.js';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -41,7 +42,6 @@ const ContactSection = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const phoneNumber = "447440366913";
 
     // Build WhatsApp text message
     const message =
@@ -56,7 +56,7 @@ const ContactSection = () => {
         : ``);
 
     // Open WhatsApp chat with the pre-filled message first
-    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+    window.open(`https://wa.me/${Config.whatsappHref}?text=${message}`, '_blank');
 
     if (images.length > 0) {
       images.forEach((img) => {

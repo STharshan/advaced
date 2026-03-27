@@ -1,22 +1,21 @@
 import React from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import Config from "../Config";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const phoneNumber = "+44 7440 366913";
-  const email = "info@advancedautobodysolutions.co.uk";
 
   const navigate = useNavigate();
   const location = useLocation();
 
   // Identical routing table as Navbar
   const menuItems = [
-    { label: "Home",        type: "hash", target: "/" },
-    { label: "Services",    type: "page", target: "/services" },
-    { label: "Gallery",     type: "hash", target: "/#gallery" },
+    { label: "Home", type: "hash", target: "/" },
+    { label: "Services", type: "page", target: "/services" },
+    { label: "Gallery", type: "hash", target: "/#gallery" },
     { label: "Testimonial", type: "hash", target: "/#testimonial" },
-    { label: "Contact",     type: "hash", target: "/#contact" },
-    { label: "FAQ",         type: "hash", target: "/#faq" },
+    { label: "Contact", type: "hash", target: "/#contact" },
+    { label: "FAQ", type: "hash", target: "/#faq" },
   ];
 
   const handleNavClick = (item) => {
@@ -38,7 +37,6 @@ export default function Footer() {
       return;
     }
 
-    // Hash section (e.g. /#gallery)
     const hash = item.target.split("#")[1];
     if (location.pathname !== "/") {
       navigate("/");
@@ -94,32 +92,34 @@ export default function Footer() {
           <ul className="space-y-4 text-sm  text-gray-400">
             <li>
               <a
-                href={`tel:${phoneNumber.replace(/\s/g, "")}`}
+                href={`tel:${Config.phoneHref}`}
                 className="hover:text-white transition-colors block"
               >
-                {phoneNumber}
+                {Config.phoneDisplay}
               </a>
             </li>
             <li>
               <a
-                href={`mailto:${email}`}
+                href={`mailto:${Config.email}`}
                 className="hover:text-white transition-colors block break-all"
               >
-                {email}
+                {Config.email}
               </a>
             </li>
             <li className="leading-relaxed">
               <a
-                href="https://maps.google.com/?cid=15493974289278873657&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNl"
+                href={Config.addressUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white transition-colors block"
               >
-                Unit 10, Orchard Sawmills Estate <br />
-                Langley Rd S, Salford, Manchester M6 6SD
+                Advanced Autobody Solutions <br />
+                Unit 10, Orchard Trading Estate<br />
+                Langley Road South , Manchester, <br />
+                United Kingdom
               </a>
             </li>
-            <li className="text-[#FFB800]">Mon–Sun: 7:00AM – 7:00PM</li>
+            <li className="text-[#FFB800]">{Config.time}</li>
           </ul>
         </div>
 
@@ -165,7 +165,7 @@ export default function Footer() {
         <p className="text-center text-xs font-medium text-gray-500 tracking-widest uppercase">
           Powered by{" "}
           <a
-            href="https://www.ansely.co.uk/"
+            href={Config.ansely}
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#FF6D00] hover:text-[#FFB800] transition-colors"

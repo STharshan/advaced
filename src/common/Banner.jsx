@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import Config from "../Config";
 
 const Banner = ({ data }) => {
   const { backgroundImage, heading, subheading, ctaLabel, ctaHref } = data;
@@ -27,7 +28,8 @@ const Banner = ({ data }) => {
             </p>
 
             <a
-              href={ctaHref}
+              href={`https://wa.me/${Config.whatsappHref}`}
+              target="_blank"
               className="inline-flex items-center bg-[#FF6D00] text-white px-6 py-2.5 sm:px-8 sm:py-3 rounded-xl text-xs sm:text-sm font-semibold hover:bg-[#D4187A] transition-colors shadow-lg"
             >
               <span className="mr-2">{ctaLabel}</span>

@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CaseCard = ({ title, desc, img, href }) => (
   <a href={href || "#"} className="group cursor-pointer">
@@ -29,12 +30,12 @@ const RepairCases = ({ data }) => {
           <p className="text-[#B8C0CC] max-w-xl mx-auto text-sm md:text-lg">
             {subheading}
           </p>
-          <a
-            href="/#gallery"
+          <Link
+            to="/#gallery"
             className="inline-block bg-[#7C2FC0] text-white px-8 py-3 rounded-full font-bold hover:bg-[#D4187A] transition-colors"
           >
             {viewAllLabel}
-          </a>
+          </Link>
         </div>
 
         {/* Grid */}

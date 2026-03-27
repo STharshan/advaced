@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Phone, Menu, X, ChevronDown } from "lucide-react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import Config from "../Config"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,9 +11,6 @@ const Navbar = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-
-  const phoneNumber = "+447440366913";
-  const formattedPhone = "+44 7440 366913";
 
   const serviceItems = [
     { label: "Dent Removal", target: "/dent-removal" },
@@ -136,14 +134,14 @@ const Navbar = () => {
         {/* Desktop CTA */}
         <div className="hidden xl:flex items-center gap-4">
           <a
-            href={`tel:${phoneNumber}`}
+            href={`tel:${Config.phoneHref}`}
             className="p-3 rounded-full border border-white/10 text-white bg-gray-800 hover:bg-[#7C2FC0]"
           >
             <Phone size={18} />
           </a>
 
           <a
-            href={`https://wa.me/${phoneNumber.replace("+", "")}`}
+            href={`https://wa.me/${Config.whatsappHref}`}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#FF6D00] text-[#08060F] px-6 py-3 rounded-full font-bold text-sm"

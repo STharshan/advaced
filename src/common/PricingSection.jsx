@@ -1,12 +1,12 @@
 import React from "react";
+import Config from "../Config";
 
 const PricingCard = ({ title, description, price, duration, features, popular }) => (
   <div
-    className={`relative rounded-2xl p-8 flex flex-col justify-between border transition-all duration-300 ${
-      popular
+    className={`relative rounded-2xl p-8 flex flex-col justify-between border transition-all duration-300 ${popular
         ? "bg-[#08060F] border-[#7C2FC0] scale-[1.03] shadow-lg"
         : "bg-[#08060F] border-[#B8C0CC]/20"
-    }`}
+      }`}
   >
     {popular && (
       <span className="absolute top-5 right-5 text-xs px-3 py-1 rounded-full bg-[#D4187A] text-white">
@@ -31,9 +31,16 @@ const PricingCard = ({ title, description, price, duration, features, popular })
       </ul>
     </div>
 
-    <button className="mt-8 w-full py-3 rounded-xl font-semibold text-white bg-[#FF6D00] hover:bg-[#D4187A] transition-all">
-      Ask on WhatsApp
-    </button>
+    <a
+      href={`https://wa.me/${Config.whatsappHref}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block w-full"
+    >
+      <button className="mt-8 w-full py-3 rounded-xl font-semibold text-white bg-[#FF6D00] hover:bg-[#D4187A] transition-all cursor-pointer">
+        Ask on WhatsApp
+      </button>
+    </a>
   </div>
 );
 
