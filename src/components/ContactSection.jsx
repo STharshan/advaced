@@ -35,6 +35,7 @@ const ContactSection = () => {
 
   const removeImage = (index) => {
     setImages(prev => {
+      // Memory management: Revoke URL before removing from state
       URL.revokeObjectURL(prev[index].preview);
       return prev.filter((_, i) => i !== index);
     });
@@ -55,7 +56,7 @@ const ContactSection = () => {
         ? `_${images.length} photo(s) attached please check images below._`
         : ``);
 
-    // Open WhatsApp chat with the pre-filled message first
+    // Open WhatsApp chat
     window.open(`https://wa.me/${Config.whatsappHref}?text=${message}`, '_blank');
 
     if (images.length > 0) {
@@ -64,9 +65,14 @@ const ContactSection = () => {
       });
     }
 
-    // Reset
+    // --- FIX: Memory Management & State Reset ---
     setFormData({ name: '', phone: '', email: '', service: '', note: '' });
-    setImages([]);
+    
+    setImages(prev => {
+      // Properly revoke all preview URLs to prevent memory leaks
+      prev.forEach(img => URL.revokeObjectURL(img.preview));
+      return [];
+    });
   };
 
   return (
@@ -74,7 +80,6 @@ const ContactSection = () => {
       id="contact"
       className="relative min-h-screen w-full bg-[#08060F] overflow-hidden flex items-center py-20 px-6 md:px-12 lg:px-24 font-['Rajdhani']"
     >
-
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
         <video
@@ -94,7 +99,7 @@ const ContactSection = () => {
       <div className="relative z-10 max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-end">
 
-          {/* Left */}
+          {/* Left Content */}
           <div className="flex flex-col justify-between h-full py-4">
             <div className="max-w-xl">
               <h1 className="text-[4rem] md:text-[5.5rem] lg:text-[7rem] font-['Bebas_Neue'] text-white leading-[0.9] tracking-normal mb-6">
@@ -132,7 +137,6 @@ const ContactSection = () => {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-5">
-
               {/* Name & Phone */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="space-y-1">
@@ -146,8 +150,15 @@ const ContactSection = () => {
                 <div className="space-y-1">
                   <label className="text-[10px] uppercase tracking-widest font-bold text-[#D4187A] font-['Share_Tech_Mono']">Phone Number</label>
                   <input
-                    type="tel" name="phone" value={formData.phone}
-                    onChange={handleChange} placeholder="07123 456789" required
+                    type="tel" 
+                    name="phone" 
+                    value={formData.phone}
+                    onChange={handleChange} 
+                    placeholder="07123 456789" 
+                    required
+                    /* --- FIX: Phone Validation --- */
+                    pattern="[0-9+\s\-\(\)]{7,15}"
+                    title="Please enter a valid phone number (7-15 digits)"
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[#7C2FC0] transition-all"
                   />
                 </div>
@@ -182,13 +193,12 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              {/* ── IMAGE UPLOAD ── */}
+              {/* IMAGE UPLOAD */}
               <div className="space-y-2">
                 <label className="text-[10px] uppercase tracking-widest font-bold text-[#D4187A] font-['Share_Tech_Mono']">
                   Upload Photos <span className="text-white/30 normal-case tracking-normal font-normal">(up to 4)</span>
                 </label>
 
-                {/* Hidden file input */}
                 <input
                   ref={fileInputRef}
                   type="file"
@@ -198,7 +208,6 @@ const ContactSection = () => {
                   onChange={handleImageChange}
                 />
 
-                {/* Drop zone only show if under 4 images */}
                 {images.length < 4 && (
                   <button
                     type="button"
@@ -214,17 +223,16 @@ const ContactSection = () => {
                   </button>
                 )}
 
-                {/* Image previews */}
                 {images.length > 0 && (
                   <div className="grid grid-cols-4 gap-2 mt-2">
                     {images.map((img, i) => (
                       <div key={i} className="relative group rounded-xl overflow-hidden aspect-square border border-white/10">
                         <img
                           src={img.preview}
+                          loading="lazy"
                           alt={`Upload ${i + 1}`}
                           className="w-full h-full object-cover"
                         />
-                        {/* Remove button */}
                         <button
                           type="button"
                           onClick={() => removeImage(i)}
@@ -233,7 +241,6 @@ const ContactSection = () => {
                         >
                           <X size={12} />
                         </button>
-                        {/* Index badge */}
                         <div className="absolute bottom-1 left-1 bg-black/60 text-white text-[10px] px-1.5 py-0.5 rounded-md font-['Share_Tech_Mono']">
                           {i + 1}
                         </div>
@@ -241,8 +248,6 @@ const ContactSection = () => {
                     ))}
                   </div>
                 )}
-
-                {/* Helper note */}
                 <p className="text-[11px] text-white/30 font-['Rajdhani']">
                   Photos will open alongside WhatsApp so you can attach them in the chat.
                 </p>
@@ -270,11 +275,9 @@ const ContactSection = () => {
 
               <p className="text-[11px] text-[#B8C0CC]/60 text-center">
                 By submitting this form, you agree to us processing your details to respond to your enquiry.
-                Your information is handled securely and in line with our Privacy Policy.
               </p>
             </form>
           </div>
-
         </div>
       </div>
     </section>

@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = ({ title, description, imgSrc }) => (
   <div className="flex flex-col bg-[#08060F] rounded-2xl overflow-hidden shadow-lg border border-[#7C2FC0]/20 hover:border-[#FF6D00] transition-all duration-300">
-    <img src={imgSrc} alt={title} className="w-full h-64 object-cover" />
+    <img src={imgSrc} loading="lazy" alt={title} className="w-full h-64 object-cover" />
     <div className="p-6">
       <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
       <p className="text-[#B8C0CC] leading-relaxed">{description}</p>

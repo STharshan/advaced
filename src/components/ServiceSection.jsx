@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Music, Crown, CalendarCheck, GlassWater, ArrowRight } from "lucide-react";
-
-import { Wrench, Shield, Car, Paintbrush } from 'lucide-react';
+import { ArrowRight, Wrench, Shield, Paintbrush } from "lucide-react";
 
 const services = [
   {
@@ -9,8 +7,8 @@ const services = [
     rotation: "rotate-0",
     title: "Scratch Repair",
     desc: "Whether it's light wear and tear or a deep key scratch running the full length of your door, we can repair any scratch on any vehicle. Paint-matched and finished to an immaculate standard.",
-    borderFrom: "from-[#7C2FC0]", // Deep Purple
-    borderTo: "to-[#D4187A]",   // Hot Magenta
+    borderFrom: "from-[#7C2FC0]", 
+    borderTo: "to-[#D4187A]", 
     icon: Paintbrush,
     linearId: "grad1",
     colors: ["#7C2FC0", "#D4187A"]
@@ -20,8 +18,8 @@ const services = [
     rotation: "rotate-1",
     title: "Bumper Repairs",
     desc: "Broken, scraped, cracked, or badly dented: we can fix any bumper and bring it back looking completely new again. No matter how bad it looks, we'll make it look like it never happened.",
-    borderFrom: "from-[#D4187A]", // Hot Magenta
-    borderTo: "to-[#FF6D00]",   // Sunset Orange
+    borderFrom: "from-[#D4187A]",
+    borderTo: "to-[#FF6D00]",
     icon: Shield,
     linearId: "grad2",
     colors: ["#D4187A", "#FF6D00"]
@@ -31,8 +29,8 @@ const services = [
     rotation: "rotate-3",
     title: "Dent Removal",
     desc: "Using top-of-the-range dent removal equipment, we restore any dent back to its original position with a flawless finish every time. No unnecessary repainting, no filler, just precision repair.",
-    borderFrom: "from-[#FF6D00]", // Sunset Orange
-    borderTo: "to-[#FFB800]",   // Chrome Gold
+    borderFrom: "from-[#FF6D00]",
+    borderTo: "to-[#FFB800]",
     icon: Wrench,
     linearId: "grad3",
     colors: ["#FF6D00", "#FFB800"]
@@ -58,11 +56,14 @@ function ServiceCard({ service, translateY, zIndex, opacity, isMobile }) {
           <div className="absolute top-0 right-0 w-24 h-24 bg-[#7C2FC0]/10 rounded-full blur-2xl" />
           
           <div className="relative w-12 h-12 flex items-center justify-center bg-[#08060F] rounded-xl">
-            <svg width="0" height="0">
-              <linearlinear id={service.linearId} x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor={service.colors[0]} />
-                <stop offset="100%" stopColor={service.colors[1]} />
-              </linearlinear>
+            <svg width="0" height="0" className="absolute">
+              {/* FIX: Changed <linearlinear> to <linearGradient> */}
+              <defs>
+                <linearGradient id={service.linearId} x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor={service.colors[0]} />
+                  <stop offset="100%" stopColor={service.colors[1]} />
+                </linearGradient>
+              </defs>
             </svg>
             <IconComponent 
               size={28} 
@@ -76,10 +77,10 @@ function ServiceCard({ service, translateY, zIndex, opacity, isMobile }) {
               <div className={`w-5 h-0.5 bg-linear-to-r ${service.borderFrom} ${service.borderTo}`} />
               <span className=" text-[10px] text-[#FF6D00] tracking-widest uppercase">Service</span>
             </div>
-            <h3 className="text-white text-xl  uppercase tracking-wide leading-tight m-0">
+            <h3 className="text-white text-xl uppercase tracking-wide leading-tight m-0">
               {service.title}
             </h3>
-            <p className="text-[#B8C0CC]  text-sm leading-relaxed m-0">
+            <p className="text-[#B8C0CC] text-sm leading-relaxed m-0">
               {service.desc}
             </p>
           </div>
@@ -151,9 +152,7 @@ export default function ServicesSection() {
   const dotAccents = ["bg-[#7C2FC0]", "bg-[#D4187A]", "bg-[#FF6D00]", "bg-[#FFB800]"];
 
   return (
-    <section ref={outerRef} className="relative bg-[#08060F]" style={{ height: "300vh" }}>
-
-      {/* Ambient glows */}
+    <section id="services" ref={outerRef} className="relative bg-[#08060F]" style={{ height: "300vh" }}>
       <div className="sticky top-0 min-h-screen pointer-events-none">
         <div className="absolute top-1/4 left-[5%] w-[30vw] h-[30vw] rounded-full bg-[#7C2FC0]/10 blur-[80px]" />
         <div className="absolute bottom-[10%] right-[10%] w-[25vw] h-[25vw] rounded-full bg-[#D4187A]/10 blur-[80px]" />
@@ -171,9 +170,9 @@ export default function ServicesSection() {
                 </span>
               </div>
 
-              <h2 className="text-white  uppercase tracking-wide leading-none m-0 text-[clamp(2.2rem,3.8vw,3.5rem)]">
+              <h2 className="text-white uppercase tracking-wide leading-none m-0 text-[clamp(2.2rem,3.8vw,3.5rem)]">
                 Our 5-Star Rated<br />
-                <span className="text-transparent bg-clip-text bg-linear-to-r from-[#7C2FC0] to-[#D4187A]  italic">
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-[#7C2FC0] to-[#D4187A] italic">
                   Services
                 </span>
               </h2>

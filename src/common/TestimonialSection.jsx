@@ -27,6 +27,7 @@ const TestimonialSection = ({ data }) => {
             <img
               src={testimonial.image}
               alt={testimonial.name}
+              loading="lazy"
               className="w-14 h-14 rounded-full object-cover border-2 border-[#FF6D00]"
             />
             <p className="mt-4 font-semibold text-white">{testimonial.name}</p>

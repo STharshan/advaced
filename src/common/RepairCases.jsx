@@ -1,14 +1,13 @@
-import { ArrowRight } from "lucide-react";
-import React from "react";
 import { Link } from "react-router-dom";
 
-const CaseCard = ({ title, desc, img, href }) => (
+const CaseCard = ({ title, img, href }) => (
   <a href={href || "#"} className="group cursor-pointer">
     {/* Image */}
     <div className="relative overflow-hidden rounded-3xl aspect-16/10">
       <img
         src={img}
         alt={title}
+        loading="lazy"
         className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
       />
       <div className="absolute inset-0 bg-linear-to-t from-[#08060F]/90 via-[#08060F]/20 to-transparent" />

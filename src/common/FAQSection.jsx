@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import Config from "../Config";
 
@@ -36,7 +36,6 @@ const FAQSection = ({ data }) => {
     headingHighlight,
     subheading,
     ctaLabel,
-    ctaHref,
     itemsLeft,
     itemsRight,
   } = data;

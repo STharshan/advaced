@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import Config from "../Config";
 
@@ -11,7 +10,6 @@ export default function Footer() {
   // Identical routing table as Navbar
   const menuItems = [
     { label: "Home", type: "hash", target: "/" },
-    { label: "Services", type: "page", target: "/services" },
     { label: "Gallery", type: "hash", target: "/#gallery" },
     { label: "Testimonial", type: "hash", target: "/#testimonial" },
     { label: "Contact", type: "hash", target: "/#contact" },
@@ -19,14 +17,12 @@ export default function Footer() {
   ];
 
   const handleNavClick = (item) => {
-    // Page route (e.g. /services)
     if (item.type === "page") {
       navigate(item.target);
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
-    // Home → scroll to top
     if (item.target === "/") {
       if (location.pathname !== "/") {
         navigate("/");

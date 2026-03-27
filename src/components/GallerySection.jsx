@@ -119,7 +119,7 @@ const GallerySection = () => {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="project-card shrink-0 w-70 sm:w-88 md:w-113 transition-all duration-700 ease-out cursor-pointer"
+                className="project-card shrink-0 w-70 py-15 sm:w-88 md:w-113 transition-all duration-700 ease-out cursor-pointer"
                 style={{
                   transform: index === activeIndex
                     ? 'scale(1.05) translateZ(100px) translateY(-20px)'

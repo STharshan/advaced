@@ -21,7 +21,7 @@ const BrandFeaturesSection = () => {
       desc: "Advanced Auto Body Solutions was built on one simple belief, every vehicle deserves a repair done properly. Based in the heart of Manchester, we've spent years perfecting our craft, working on everything from everyday family cars to prestige vehicles, always delivering results that speak for themselves.",
       bgColor: "bg-[#7C2FC0]",
       textColor: "text-white",
-      labelColor: "text-[#FFB800]", // Chrome Gold highlight
+      labelColor: "text-[#FFB800]",
       img: "/a1.jpg"
     },
     {
@@ -32,7 +32,7 @@ const BrandFeaturesSection = () => {
       desc: "Every job comes with a 100% Satisfaction Guarantee and our Price Match Promise, backed by hundreds of 5-star reviews across Manchester.",
       bgColor: "bg-[#D4187A]",
       textColor: "text-white",
-      labelColor: "text-[#FF6D00]", // Sunset Orange accent
+      labelColor: "text-[#FF6D00]",
       img: "a2.jpg"
     }
   ];
@@ -55,7 +55,7 @@ const BrandFeaturesSection = () => {
         <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col md:flex-row">
 
           {/* LEFT SIDE: Text Panels */}
-          <div className="relative w-full md:w-1/2 h-1/2 md:h-full overflow-hidden border-r border-white/5">
+          <div className="relative w-full md:w-1/2 h-1/2 md:h-full  overflow-hidden border-r border-white/5">
             <motion.div
               style={{ y: textTranslateY }}
               className="absolute top-0 left-0 w-full h-full"
@@ -63,7 +63,7 @@ const BrandFeaturesSection = () => {
               {content.map((item) => (
                 <div
                   key={item.id}
-                  className={`flex flex-col justify-center px-10 md:px-24 h-full bg-[#08060F] transition-colors duration-500`}
+                  className={`flex flex-col justify-center px-10 md:px-24 pt-12 h-full bg-[#08060F] transition-colors duration-500`}
                 >
                   <h2 className=" text-6xl md:text-8xl text-white mb-4">
                     {item.title}
@@ -88,6 +88,7 @@ const BrandFeaturesSection = () => {
                   <div className={`absolute inset-0 ${item.bgColor} opacity-20 group-hover:opacity-0 transition-opacity duration-1000 mix-blend-color`}></div>
                   <img
                     src={item.img}
+                    loading="lazy"
                     alt={item.title}
                     className="w-full h-full object-cover grayscale-30 group-hover:grayscale-0 transition-all duration-1000"
                   />

@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import Config from "../Config";
 
 const Banner = ({ data }) => {
-  const { backgroundImage, heading, subheading, ctaLabel, ctaHref } = data;
+  const { backgroundImage, heading, subheading, ctaLabel } = data;
 
   return (
     <section className="bg-[#08060F] py-16 md:py-24 px-4 sm:px-6 lg:px-8">

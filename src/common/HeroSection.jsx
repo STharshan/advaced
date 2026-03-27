@@ -9,7 +9,6 @@ const HeroSection = ({ data }) => {
     title,
     subtitle,
     ctaLabel,
-    ctaHref,
   } = data;
 
   return (
@@ -20,6 +19,7 @@ const HeroSection = ({ data }) => {
       <img
         src={backgroundImage}
         alt={title}
+        loading="lazy"
         className="absolute inset-0 w-[95%] mx-auto rounded-4xl h-full object-cover"
       />
 
