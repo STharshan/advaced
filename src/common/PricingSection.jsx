@@ -19,14 +19,14 @@ const PricingCard = ({ title, description, price, duration, features, popular })
       <p className="text-[#B8C0CC] mt-1 mb-6 text-sm">{description}</p>
 
       <div className="flex items-center gap-3 mb-6">
-        <span className="text-3xl font-bold text-[#FFB800]">${price}</span>
+        <span className="text-3xl font-bold text-[#FFB800]">£{price}</span>
         <span className="text-[#B8C0CC] text-sm">| {duration}</span>
       </div>
 
       <p className="text-[#FF6D00] font-medium mb-3">Includes:</p>
       <ul className="space-y-2 text-[#B8C0CC] text-sm">
         {features.map((item, index) => (
-          <li key={index}>• {item}</li>
+          <li key={index}> {item}</li>
         ))}
       </ul>
     </div>

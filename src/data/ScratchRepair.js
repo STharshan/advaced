@@ -123,21 +123,21 @@ const ScratchRepairData = {
             {
                 name: "Michael T.",
                 role: "Tesla Model 3 Owner",
-                image: "/user1.jpg",
+                image: "/logo.png",
                 review:
                     "Professional, quick, and detail-focused. Best service experience I've had so far.",
             },
             {
                 name: "David R.",
                 role: "BMW M4 Owner",
-                image: "/user2.jpg",
+                image: "/logo.png",
                 review:
                     "Very thorough diagnostics and clear explanations. Highly recommend this service.",
             },
             {
                 name: "Sarah K.",
                 role: "Audi A5 Owner",
-                image: "/user3.jpg",
+                image: "/logo.png",
                 review:
                     "Fast, reliable, and extremely professional. My car feels brand new again.",
             },
