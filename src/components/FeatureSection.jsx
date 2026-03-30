@@ -62,7 +62,7 @@ const BrandFeaturesSection = () => {
         <div className="absolute inset-0 bg-black/60"></div>
 
         {/* Content */}
-        <div className="relative z-10 pb-16 md:pb-24">
+        <div className="relative z-10 pb-24">
           <h1 className="text-7xl md:text-9xl text-white leading-[0.8]">
             Advanced <br />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-[#7C2FC0] via-[#D4187A] to-[#FF6D00] italic">
