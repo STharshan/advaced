@@ -141,7 +141,7 @@ const GallerySection = () => {
                     src={project.image}
                     loading="lazy"
                     alt="Work Gallery"
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    className="w-full h-full object-top transition-transform duration-1000 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-[#08060F] via-transparent to-transparent opacity-60"></div>
                 </div>
