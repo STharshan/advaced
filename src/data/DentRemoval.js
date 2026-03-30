@@ -16,9 +16,10 @@ const DentRemovalData = {
 
   // ─── BENEFITS SECTION ────────────────────────────────────
   benefits: {
-    heading: "Precision restoration, no shortcuts",
+    heading: "Precision restoration, ",
+    headingHighlight: "no shortcuts",
     subheading: "Our specialist equipment allows us to work the metal back to its original form without compromising your vehicle's factory paint.",
-    items : [
+    items: [
       {
         icon: Search,
         title: "Any Dent",
@@ -43,8 +44,9 @@ const DentRemovalData = {
   },
 
   // ─── WHAT'S INCLUDED SECTION ─────────────────────────────
-included: {
-    heading: "Full Dent Removal Process",
+  included: {
+    heading: "Full Dent ",
+    headingHighlight: "Removal Process",
     subheading: "Assessed, repaired, and finished using specialist tools for a perfect result every time.",
     items: [
       {
@@ -73,7 +75,6 @@ included: {
 
   // ─── PRICING SECTION ─────────────────────────────────────
   pricing: {
-    heading: "Transparent Pricing",
     subheading: "Clear, upfront costs for every diagnostic service.",
     plans: [
       {
@@ -147,7 +148,6 @@ included: {
 
   // ─── REPAIR CASES SECTION ────────────────────────────────
   repairCases: {
-    heading: "Selected Repair Cases",
     subheading:
       "Real results from our recent diagnostics, engine work, and performance upgrades.",
     viewAllLabel: "View All Cases",

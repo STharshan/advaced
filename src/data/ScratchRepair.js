@@ -1,4 +1,4 @@
-import { Search, ShieldCheck, Paintbrush, Sparkles, ShieldPlus, Coins, Target, Zap } from "lucide-react";
+import { ShieldCheck, Coins, Target, Zap } from "lucide-react";
 
 const ScratchRepairData = {
     // ─── HERO SECTION ────────────────────────────────────────
@@ -16,7 +16,8 @@ const ScratchRepairData = {
 
     // ─── BENEFITS SECTION ────────────────────────────────────
     benefits: {
-        heading: "Don't let scratches define your vehicle",
+        heading: "Don't let scratches ",
+        headingHighlight: "define your vehicle",
         subheading: "Even minor scratches can expose bare metal, leading to rust and further damage over time.",
         items: [
             {
@@ -44,7 +45,8 @@ const ScratchRepairData = {
 
     // ─── WHAT'S INCLUDED SECTION ─────────────────────────────
     included: {
-        heading: "Full scratch repair coverage",
+        heading: "Full scratch",
+        headingHighlight: " repair coverage",
         subheading: "Every repair is assessed, prepared and finished to a professional standard.",
         items: [
             {
@@ -72,7 +74,6 @@ const ScratchRepairData = {
     },
     // ─── PRICING SECTION ─────────────────────────────────────
     pricing: {
-        heading: "Transparent Pricing",
         subheading: "Clear, upfront costs for every diagnostic service.",
         plans: [
             {
@@ -146,7 +147,6 @@ const ScratchRepairData = {
 
     // ─── REPAIR CASES SECTION ────────────────────────────────
     repairCases: {
-        heading: "Selected Repair Cases",
         subheading:
             "Real results from our recent diagnostics, engine work, and performance upgrades.",
         viewAllLabel: "View All Cases",

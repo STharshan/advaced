@@ -1,4 +1,4 @@
-import { Search, ShieldCheck, Wrench, Paintbrush, Sparkles, ShieldPlus, Coins, Activity } from "lucide-react";
+import { Search, Sparkles, ShieldPlus, Coins } from "lucide-react";
 
 const DentRemovalData = {
     // ─── HERO SECTION ────────────────────────────────────────
@@ -16,7 +16,8 @@ const DentRemovalData = {
 
     // ─── BENEFITS SECTION ────────────────────────────────────
     benefits: {
-        heading: "Your bumper does more than you think",
+        heading: "Your bumper does ",
+        headingHighlight: "more than you think",
         subheading: "A damaged bumper affects both your vehicle's appearance and its ability to absorb impact in future incidents.",
         items: [
             {
@@ -44,7 +45,8 @@ const DentRemovalData = {
 
     // ─── WHAT'S INCLUDED SECTION ─────────────────────────────
     included: {
-        heading: "Full Bumper Restoration Process",
+        heading: "Full Bumper ",
+        headingHighlight: "Restoration Process",
         subheading: "From structural repair through to a flawless painted finish.",
         items: [
             {
@@ -72,7 +74,6 @@ const DentRemovalData = {
     },
     // ─── PRICING SECTION ─────────────────────────────────────
     pricing: {
-        heading: "Transparent Pricing",
         subheading: "Clear, upfront costs for every diagnostic service.",
         plans: [
             {
@@ -146,7 +147,6 @@ const DentRemovalData = {
 
     // ─── REPAIR CASES SECTION ────────────────────────────────
     repairCases: {
-        heading: "Selected Repair Cases",
         subheading:
             "Real results from our recent diagnostics, engine work, and performance upgrades.",
         viewAllLabel: "View All Cases",

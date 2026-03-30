@@ -1,7 +1,7 @@
 import React from "react";
 
 const BenefitsSection = ({ data }) => {
-  const { heading, subheading, items } = data;
+  const { heading, headingHighlight , subheading, items } = data;
 
   return (
     <section className="bg-[#08060F] py-24 px-6 md:px-12">
@@ -10,8 +10,12 @@ const BenefitsSection = ({ data }) => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl text-white mb-4">
             {heading}
+            <span className="text-[#D4187A]">
+              {headingHighlight}
+            </span>
           </h2>
-          <p className=" text-[#B8C0CC] text-lg md:text-xl">
+
+          <p className="text-[#B8C0CC] text-lg md:text-xl">
             {subheading}
           </p>
         </div>
@@ -22,16 +26,23 @@ const BenefitsSection = ({ data }) => {
             const Icon = item.icon;
             return (
               <div
-                key={index}
+                key={item.title}
                 className="flex flex-col items-center text-center p-8 rounded-2xl border border-white/10 bg-[#16141D] hover:border-[#FF6D00] transition-colors"
               >
+                {/* Icon */}
                 <div className="w-16 h-16 flex items-center justify-center bg-white rounded-xl mb-6">
-                  <Icon size={32} className="text-[#08060F]" />
+                  <Icon size={32} className="text-[#D4187A]" />
                 </div>
-                <h3 className=" text-2xl text-white mb-2 uppercase tracking-wide">
+
+                {/* Title (Gradient like SERVICES) */}
+                <h3 className="text-2xl mb-2 uppercase tracking-wide text-transparent bg-clip-text bg-linear-to-r from-[#7C2FC0] to-[#D4187A]">
                   {item.title}
                 </h3>
-                <p className=" text-[#B8C0CC]">{item.desc}</p>
+
+                {/* Description */}
+                <p className="text-[#FF6D00]">
+                  {item.desc}
+                </p>
               </div>
             );
           })}

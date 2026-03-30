@@ -12,14 +12,19 @@ const Card = ({ title, description, imgSrc }) => (
 );
 
 const WhatsIncluded = ({ data }) => {
-  const { heading, subheading, items } = data;
+  const { heading, subheading, items, headingHighlight } = data;
 
   return (
     <section className="py-20 px-4 md:px-8 bg-[#08060F]">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-14">
-          <h2 className="text-4xl font-bold text-white mb-4">{heading}</h2>
+          <h2 className="text-4xl font-bold text-white mb-4">
+            {heading}
+            <span className="text-[#FF6D00]">
+              {headingHighlight}
+            </span>
+          </h2>
           <p className="text-[#B8C0CC] text-lg">{subheading}</p>
           <div className="mx-auto mt-4 h-1 w-24 bg-[#FF6D00] rounded"></div>
         </div>

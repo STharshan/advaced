@@ -16,15 +16,15 @@ const CaseCard = ({ title, img, href }) => (
 );
 
 const RepairCases = ({ data }) => {
-  const { heading, subheading, viewAllLabel, viewAllHref, items } = data;
+  const { subheading, viewAllLabel, viewAllHref, items } = data;
 
   return (
     <section className="bg-[#08060F] py-20 px-6 lg:px-20">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 space-y-6">
-          <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight">
-            {heading}
+          <h2 className="text-4xl md:text-6xl font-bold text-[#D4187A] tracking-tight">
+            Selected <span className="text-[#FF6D00]">Repair</span> <span className="text-[#7C2FC0]">Cases</span>
           </h2>
           <p className="text-[#B8C0CC] max-w-xl mx-auto text-sm md:text-lg">
             {subheading}
