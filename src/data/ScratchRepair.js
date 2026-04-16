@@ -4,7 +4,7 @@ const ScratchRepairData = {
     // ─── HERO SECTION ────────────────────────────────────────
     hero: {
         backgroundImage:
-            "https://framerusercontent.com/images/LmQpQxrCvAgtMxoBkA6UJXf6QA.webp",
+            "bg.png",
         backLinkLabel: "Services",
         backLinkHref: "/services",
         title: "Scratch Repairs",
@@ -46,7 +46,7 @@ const ScratchRepairData = {
     // ─── WHAT'S INCLUDED SECTION ─────────────────────────────
     included: {
         heading: "Full scratch",
-        headingHighlight: " repair coverage",
+        headingHighlight: " Repair Coverage",
         subheading: "Every repair is assessed, prepared and finished to a professional standard.",
         items: [
             {

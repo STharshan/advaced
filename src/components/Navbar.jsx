@@ -12,7 +12,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // 🔥 Navigation Logic
+  // Navigation Logic
   const performNav = (target, closeMobile = true) => {
     if (closeMobile) setIsOpen(false);
 
@@ -45,6 +45,8 @@ const Navbar = () => {
     { label: "Dent Removal", target: "/dent-removal" },
     { label: "Bumper Repair", target: "/bumper-repair" },
     { label: "Scratch Repair", target: "/scratch-repair" },
+    { label: "Insurance Repairs", target: "/insurance-repairs" },
+    { label: "WheelRefurbishments", target: "/wheel-refurbishments" },
   ];
 
   const menuItems = [
@@ -55,14 +57,14 @@ const Navbar = () => {
     { label: "FAQ", target: "/#faq" },
   ];
 
-  // ✅ Close menus on route change
+  // Close menus on route change
   useEffect(() => {
     setIsOpen(false);
     setServicesOpen(false);
     setMobileServicesOpen(false);
   }, [location.pathname]);
 
-  // ✅ Click Outside Close
+  // Click Outside Close
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (

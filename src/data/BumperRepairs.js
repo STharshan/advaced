@@ -4,7 +4,7 @@ const DentRemovalData = {
     // ─── HERO SECTION ────────────────────────────────────────
     hero: {
         backgroundImage:
-            "https://framerusercontent.com/images/LmQpQxrCvAgtMxoBkA6UJXf6QA.webp",
+            "bg.png",
         backLinkLabel: "Services",
         backLinkHref: "/services",
         title: "Bumper Repairs",

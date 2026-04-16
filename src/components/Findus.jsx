@@ -1,12 +1,21 @@
 import { useState } from "react";
 
 const offices = [
-  { id: 0, city: "Salford",   country: "Greater Manchester", lat: 53.4875, lng: -2.2901, zoom: 13 },
+  { id: 0, city: "Salford", country: "Greater Manchester", lat: 53.4875, lng: -2.2901, zoom: 13 },
   { id: 1, city: "Stockport", country: "Greater Manchester", lat: 53.4106, lng: -2.1575, zoom: 13 },
-  { id: 2, city: "Bolton",    country: "Greater Manchester", lat: 53.5781, lng: -2.4282, zoom: 13 },
-  { id: 3, city: "Wigan",     country: "Greater Manchester", lat: 53.5450, lng: -2.6325, zoom: 13 },
-  { id: 4, city: "Rochdale",  country: "Greater Manchester", lat: 53.6097, lng: -2.1561, zoom: 13 },
-  { id: 5, city: "Oldham",    country: "Greater Manchester", lat: 53.5409, lng: -2.1114, zoom: 13 },
+  { id: 2, city: "Bolton", country: "Greater Manchester", lat: 53.5781, lng: -2.4282, zoom: 13 },
+  { id: 3, city: "Wigan", country: "Greater Manchester", lat: 53.5450, lng: -2.6325, zoom: 13 },
+  { id: 4, city: "Rochdale", country: "Greater Manchester", lat: 53.6097, lng: -2.1561, zoom: 13 },
+  { id: 5, city: "Oldham", country: "Greater Manchester", lat: 53.5409, lng: -2.1114, zoom: 13 },
+  { id: 6, city: "Trafford", country: "Greater Manchester", lat: 53.4448, lng: -2.3484, zoom: 13 },
+  { 
+    id: 7, 
+    city: "Cheshire", 
+    country: "Greater Manchester", 
+    lat: 53.3000, 
+    lng: -2.5000, 
+    zoom: 13 
+  },
 ];
 
 const LocationPinIcon = () => (
@@ -18,10 +27,10 @@ const LocationPinIcon = () => (
 
 function buildMapUrl({ lat, lng }) {
   const bbox = 0.04;
-  const left   = (lng - bbox).toFixed(4);
-  const right  = (lng + bbox).toFixed(4);
+  const left = (lng - bbox).toFixed(4);
+  const right = (lng + bbox).toFixed(4);
   const bottom = (lat - bbox * 0.7).toFixed(4);
-  const top    = (lat + bbox * 0.7).toFixed(4);
+  const top = (lat + bbox * 0.7).toFixed(4);
   return (
     `https://www.openstreetmap.org/export/embed.html` +
     `?bbox=${left},${bottom},${right},${top}` +
@@ -70,7 +79,7 @@ export default function Findus() {
 
           {/* Description */}
           <p className="text-sm leading-relaxed mb-10 max-w-sm" style={{ color: "#B8C0CC" }}>
-           Based in Manchester, we provide professional auto body repair services across the surrounding areas. Wherever you are, getting your vehicle to us is easier than you think.
+            Based in Manchester, we provide professional autobody repair services across the surrounding areas. Wherever you are, getting your vehicle to us is easier than you think.
           </p>
 
           {/* Area Cards Grid */}
