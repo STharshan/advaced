@@ -82,7 +82,7 @@ export default function Header() {
             {/* Centered Text */}
             <div
                 ref={textRef}
-                className="relative z-20 flex flex-col justify-center h-full px-4 sm:px-8 md:px-16 lg:px-24 ml-12 mt-10"
+                className="relative z-20 flex flex-col justify-center h-full sm:px-8 md:px-16 lg:px-24 px-12 mt-10"
             >
                 <h1 className="text-5xl md:text-6xl font-bold leading-tight">
                     ADVANCED <br />
