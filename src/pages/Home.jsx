@@ -7,10 +7,12 @@ import GallerySection from '../components/GallerySection'
 import TestimonialsSection from '../components/Testimonial/TestimonialSection'
 import ScrollingTestimonials from '../components/Testimonial/ScrollTest'
 import Findus from '../components/Findus'
+import Header from '../components/Header'
 
 const Home = () => {
   return (
     <div>
+      <Header />
       <FeaturesSection />
       <ServicesSection />
       <GallerySection />

@@ -34,27 +34,7 @@ const BrandFeaturesSection = () => {
   ];
 
   return (
-    <div id='/' className="bg-[#08060F] text-[#B8C0CC] selection:bg-[#FF6D00] selection:text-black">
-
-      {/* Header Section */}
-      <header className="relative h-screen px-8 md:px-20 border-b border-white/5 overflow-hidden flex items-end">
-        <video
-          autoPlay loop muted playsInline poster="/fall.png"
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/bg.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-black/60"></div>
-
-        <div className="relative z-10 pb-24">
-          <h1 className="text-7xl md:text-9xl text-white leading-[0.8]">
-            Advanced <br />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#7C2FC0] via-[#D4187A] to-[#FF6D00] italic">
-              Autobody Solutions
-            </span>
-          </h1>
-        </div>
-      </header>
+    <div className="bg-[#08060F] text-[#B8C0CC] selection:bg-[#FF6D00] selection:text-black">
 
       {/* MOBILE LAYOUT: Text next to Image/Video (Visible only on mobile) */}
       <div className="flex flex-col lg:hidden">
