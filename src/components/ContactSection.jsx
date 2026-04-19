@@ -78,7 +78,7 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="relative min-h-screen w-full bg-[#08060F] overflow-hidden flex items-center py-20 px-6 md:px-12 lg:px-24 font-['Rajdhani']"
+      className="relative min-h-screen w-full bg-[#08060F] overflow-hidden flex items-center py-20 px-6 md:px-12 lg:px-24"
     >
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
@@ -102,8 +102,8 @@ const ContactSection = () => {
           {/* Left Content */}
           <div className="flex flex-col justify-between h-full py-4">
             <div className="max-w-xl">
-              <h1 className="text-[4rem] md:text-[5.5rem] lg:text-[7rem] font-['Bebas_Neue'] text-white leading-[0.9] tracking-normal mb-6">
-                <span className="text-[#7C2FC0] italic font-['Exo_2'] text-[3rem] md:text-[4.5rem] lg:text-[5.5rem]">
+              <h1 className="text-[4rem] md:text-[5.5rem] lg:text-[7rem] text-white leading-[0.9] tracking-normal mb-6">
+                <span className="text-[#7C2FC0] italic text-[3rem] md:text-[4.5rem] lg:text-[5.5rem]">
                   Get In Touch
                 </span>
               </h1>
@@ -113,13 +113,13 @@ const ContactSection = () => {
             </div>
 
             <div className="mt-20 lg:mt-40">
-              <p className="text-xl md:text-2xl text-white font-semibold leading-relaxed max-w-lg mb-8 italic font-['Exo_2']">
+              <p className="text-xl md:text-2xl text-white font-semibold leading-relaxed max-w-lg mb-8 italic">
                 "We don't just fix cars, we give people their pride back."
               </p>
               <div className="flex items-center gap-4">
                 <div>
                   <div className="text-white font-bold text-base tracking-wide">Advanced Autobody Solutions</div>
-                  <div className="text-[#D4187A] text-sm font-['Share_Tech_Mono'] uppercase tracking-wider">Manchester</div>
+                  <div className="text-[#D4187A] text-sm uppercase tracking-wider">Manchester</div>
                 </div>
               </div>
             </div>
@@ -140,7 +140,7 @@ const ContactSection = () => {
               {/* Name & Phone */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="space-y-1">
-                  <label className="text-[10px] uppercase tracking-widest font-bold text-[#D4187A] font-['Share_Tech_Mono']">Full Name</label>
+                  <label className="text-[10px] uppercase tracking-widest font-bold text-[#D4187A]">Full Name</label>
                   <input
                     type="text" name="name" value={formData.name}
                     onChange={handleChange} placeholder="John Doe" required
@@ -148,7 +148,7 @@ const ContactSection = () => {
                   />
                 </div>
                 <div className="space-y-1">
-                  <label className="text-[10px] uppercase tracking-widest font-bold text-[#D4187A] font-['Share_Tech_Mono']">Phone Number</label>
+                  <label className="text-[10px] uppercase tracking-widest font-bold text-[#D4187A]">Phone Number</label>
                   <input
                     type="tel" 
                     name="phone" 
@@ -166,7 +166,7 @@ const ContactSection = () => {
 
               {/* Email */}
               <div className="space-y-1">
-                <label className="text-[10px] uppercase tracking-widest font-bold text-[#D4187A] font-['Share_Tech_Mono']">Email Address</label>
+                <label className="text-[10px] uppercase tracking-widest font-bold text-[#D4187A] ">Email Address</label>
                 <input
                   type="email" name="email" value={formData.email}
                   onChange={handleChange} placeholder="your@email.com" required
@@ -176,7 +176,7 @@ const ContactSection = () => {
 
               {/* Repair Type */}
               <div className="space-y-1">
-                <label className="text-[10px] uppercase tracking-widest font-bold text-[#D4187A] font-['Share_Tech_Mono']">Type of Repair</label>
+                <label className="text-[10px] uppercase tracking-widest font-bold text-[#D4187A] ">Type of Repair</label>
                 <div className="relative">
                   <select
                     name="service" value={formData.service}
@@ -195,7 +195,7 @@ const ContactSection = () => {
 
               {/* IMAGE UPLOAD */}
               <div className="space-y-2">
-                <label className="text-[10px] uppercase tracking-widest font-bold text-[#D4187A] font-['Share_Tech_Mono']">
+                <label className="text-[10px] uppercase tracking-widest font-bold text-[#D4187A] ">
                   Upload Photos <span className="text-white/30 normal-case tracking-normal font-normal">(up to 4)</span>
                 </label>
 
@@ -241,21 +241,21 @@ const ContactSection = () => {
                         >
                           <X size={12} />
                         </button>
-                        <div className="absolute bottom-1 left-1 bg-black/60 text-white text-[10px] px-1.5 py-0.5 rounded-md font-['Share_Tech_Mono']">
+                        <div className="absolute bottom-1 left-1 bg-black/60 text-white text-[10px] px-1.5 py-0.5 rounded-md ">
                           {i + 1}
                         </div>
                       </div>
                     ))}
                   </div>
                 )}
-                <p className="text-[11px] text-white/30 font-['Rajdhani']">
+                <p className="text-[11px] text-white/30">
                   Photos will open alongside WhatsApp so you can attach them in the chat.
                 </p>
               </div>
 
               {/* Notes */}
               <div className="space-y-1">
-                <label className="text-[10px] uppercase tracking-widest font-bold text-[#D4187A] font-['Share_Tech_Mono']">Additional Notes</label>
+                <label className="text-[10px] uppercase tracking-widest font-bold text-[#D4187A] ">Additional Notes</label>
                 <textarea
                   name="note" value={formData.note}
                   onChange={handleChange} rows="2"

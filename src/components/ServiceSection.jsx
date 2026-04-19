@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, Wrench, Shield, Paintbrush } from "lucide-react";
+import { ArrowRight, Wrench, Shield, Paintbrush, ShieldCheck, Disc } from "lucide-react";
 
 const services = [
   {
@@ -7,8 +7,8 @@ const services = [
     rotation: "rotate-0",
     title: "Scratch Repair",
     desc: "Whether it's light wear and tear or a deep key scratch running the full length of your door, we can repair any scratch on any vehicle. Paint-matched and finished to an immaculate standard.",
-    borderFrom: "from-[#7C2FC0]", 
-    borderTo: "to-[#D4187A]", 
+    borderFrom: "from-[#7C2FC0]",
+    borderTo: "to-[#D4187A]",
     icon: Paintbrush,
     linearId: "grad1",
     colors: ["#7C2FC0", "#D4187A"]
@@ -26,7 +26,7 @@ const services = [
   },
   {
     id: 3,
-    rotation: "rotate-3",
+    rotation: "rotate-2",
     title: "Dent Removal",
     desc: "Using top-of-the-range dent removal equipment, we restore any dent back to its original position with a flawless finish every time. No unnecessary repainting, no filler, just precision repair.",
     borderFrom: "from-[#FF6D00]",
@@ -34,7 +34,29 @@ const services = [
     icon: Wrench,
     linearId: "grad3",
     colors: ["#FF6D00", "#FFB800"]
-  }
+  },
+  {
+    id: 4,
+    rotation: "rotate-3",
+    title: "Insurance Repairs",
+    desc: "We take the hassle out of accident repairs by working directly with your insurer, restoring your vehicle to its pre-accident condition with precision and care.",
+    borderFrom: "from-[#FF6D00]",
+    borderTo: "to-[#FFB800]",
+    icon: ShieldCheck,
+    linearId: "grad3",
+    colors: ["#FF6D00", "#FFB800"]
+  },
+  {
+    id: 5,
+    rotation: "rotate-4",
+    title: "Wheel Refurbishments",
+    desc: "Using advanced refurbishment techniques and high-quality materials, we restore your wheels to their original condition with a smooth, factory-like finish.",
+    borderFrom: "from-[#FF6D00]",
+    borderTo: "to-[#FFB800]",
+    icon: Disc,
+    linearId: "grad3",
+    colors: ["#FF6D00", "#FFB800"]
+  },
 ];
 
 function ServiceCard({ service, translateY, zIndex, opacity, isMobile }) {
@@ -43,18 +65,18 @@ function ServiceCard({ service, translateY, zIndex, opacity, isMobile }) {
   return (
     <div
       className={`absolute w-full ${service.rotation}`}
-      style={{ 
-        maxWidth: isMobile ? "100%" : 420, 
-        zIndex, 
-        transform: `translateY(${translateY}%)`, 
-        opacity, 
-        willChange: "transform, opacity" 
+      style={{
+        maxWidth: isMobile ? "100%" : 420,
+        zIndex,
+        transform: `translateY(${translateY}%)`,
+        opacity,
+        willChange: "transform, opacity"
       }}
     >
       <div className={`bg-linear-to-br ${service.borderFrom} ${service.borderTo} rounded-xl p-px`}>
         <div className="bg-[#08060F] rounded-xl p-7 flex flex-col gap-4 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-24 h-24 bg-[#7C2FC0]/10 rounded-full blur-2xl" />
-          
+
           <div className="relative w-12 h-12 flex items-center justify-center bg-[#08060F] rounded-xl">
             <svg width="0" height="0" className="absolute">
               {/* FIX: Changed <linearlinear> to <linearGradient> */}
@@ -65,9 +87,9 @@ function ServiceCard({ service, translateY, zIndex, opacity, isMobile }) {
                 </linearGradient>
               </defs>
             </svg>
-            <IconComponent 
-              size={28} 
-              stroke={`url(#${service.linearId})`} 
+            <IconComponent
+              size={28}
+              stroke={`url(#${service.linearId})`}
               strokeWidth={1.5}
             />
           </div>
@@ -97,11 +119,10 @@ function BookNowBtn() {
       href="#contact"
       onMouseEnter={() => setHov(true)}
       onMouseLeave={() => setHov(false)}
-      className={`inline-flex items-center gap-2.5 rounded-full px-7 py-3.5 text-white font-bold italic text-sm no-underline transition-all duration-200 ${
-        hov
+      className={`inline-flex items-center gap-2.5 rounded-full px-7 py-3.5 text-white font-bold italic text-sm no-underline transition-all duration-200 ${hov
           ? "bg-linear-to-r from-[#D4187A] to-[#FF6D00] shadow-lg shadow-[#D4187A]/40 scale-105"
           : "bg-linear-to-r from-[#7C2FC0] to-[#D4187A] shadow-md shadow-[#7C2FC0]/40 scale-100"
-      }`}
+        }`}
     >
       Get a Free Quote
       <ArrowRight size={18} strokeWidth={2.5} />
@@ -178,16 +199,15 @@ export default function ServicesSection() {
               </h2>
 
               <p className=" font-medium text-[#B8C0CC] text-sm md:text-base leading-[1.85] max-w-md m-0">
-                 At Advanced Auto Body Solutions, we go beyond surface-level fixes. Every repair is carried out with professional-grade equipment and a commitment to making your vehicle look exactly as it should perfect.
+                At Advanced Autobody Solutions, we go beyond surface-level fixes. Every repair is carried out with professional-grade equipment and a commitment to making your vehicle look exactly as it should perfect.
               </p>
 
               <div className="flex items-center gap-2">
                 {services.map((_, i) => (
                   <div
                     key={i}
-                    className={`h-0.5 rounded-full transition-all duration-300 ${
-                      activeIndex === i ? `${dotAccents[i]} w-9` : "bg-[#7C2FC0]/20 w-2"
-                    }`}
+                    className={`h-0.5 rounded-full transition-all duration-300 ${activeIndex === i ? `${dotAccents[i]} w-9` : "bg-[#7C2FC0]/20 w-2"
+                      }`}
                   />
                 ))}
               </div>

@@ -10,6 +10,8 @@ import DentRemovalPage from "./pages/DentRemoval";
 import BumperRepairPage from "./pages/BumperRepairs";
 import ScratchRepairPage from "./pages/ScratchRepair";
 import ScrollToHash from "./components/ScrollToHash";
+import InsuranceRepairsPage from "./pages/InsuranceRepairs";
+import WheelRefurbishmentPage from "./pages/WheelRefurbishments";
 
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
         <Route path="/dent-removal" element={<DentRemovalPage />} />
         <Route path="/bumper-repair" element={<BumperRepairPage />} />
         <Route path="/scratch-repair" element={<ScratchRepairPage />} />
+        <Route path="/insurance-repairs" element={<InsuranceRepairsPage />} />
+        <Route path="/wheel-refurbishments" element={<WheelRefurbishmentPage />} />
         <Route path="/terms" element={<TermsConditions />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
       </Routes>

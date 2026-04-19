@@ -10,9 +10,8 @@ const GallerySection = () => {
     { id: "2", image: "a2.jpg" },
     { id: "3", image: "a3.jpg" },
     { id: "4", image: "a4.jpg" },
-    { id: "5", image: "a5.jpg" },
-    { id: "6", image: "a6.jpg" },
-    { id: "7", image: "a7.jpg" },
+    { id: "5", image: "a6.jpg" },
+    { id: "6", image: "a7.jpg" },
   ];
 
   const scrollToCard = (index) => {
@@ -131,7 +130,7 @@ const GallerySection = () => {
                 onClick={() => scrollToCard(index)}
               >
                 <div
-                  className={`relative rounded-3xl overflow-hidden h-100 md:h-138 transition-all duration-500 ${
+                  className={`relative rounded-3xl overflow-hidden h-60 md:h-100 md:w-150 transition-all duration-500 ${
                     index === activeIndex
                     ? 'ring-2 ring-[#FF6D00] shadow-[0_0_50px_rgba(124,47,192,0.3)]'
                     : 'ring-1 ring-white/10'
@@ -141,9 +140,8 @@ const GallerySection = () => {
                     src={project.image}
                     loading="lazy"
                     alt="Work Gallery"
-                    className="w-full h-full object-top transition-transform duration-1000 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-[#08060F] via-transparent to-transparent opacity-60"></div>
                 </div>
               </div>
             ))}
