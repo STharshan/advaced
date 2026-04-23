@@ -51,7 +51,7 @@ export default function HeroSection() {
 
                     {/* Right */}
                     <div className="col-span-12 flex items-end justify-start pb-14 sm:pb-16 md:pb-20 lg:col-span-4 lg:justify-end lg:pb-24">
-                        <p className="max-w-[350px] text-[18px] font-light leading-[1.85] text-white/82 md:text-[19px] lg:text-[20px]">
+                        <p className="max-w-[350px] text-[18px] font-light leading-[1.55] text-white/82 md:text-[19px]">
                             At Advanced Autobody Solutions, we deliver reliable, efficient detailing for personal
                             cars and fleets, restoring showroom shine, extending vehicle life,
                             and protecting your investment.
