@@ -1,106 +1,67 @@
-import React, { useEffect, useRef, useState } from "react";
+import { ChevronLeft } from "lucide-react";
 
-export default function Header() {
-    const textRef = useRef(null);
-    const btnsRef = useRef(null);
-    const rootRef = useRef(null);
-
-    useEffect(() => {
-        let ctx;
-        let mounted = true;
-
-        (async () => {
-            // Dynamic import so it only runs in the browser
-            const gsapModule = await import("gsap");
-            const ScrollTriggerModule = await import("gsap/ScrollTrigger");
-
-            const gsap = gsapModule.default || gsapModule; // handle default/named export
-            const ScrollTrigger = ScrollTriggerModule.ScrollTrigger || ScrollTriggerModule.default;
-            gsap.registerPlugin(ScrollTrigger);
-
-            if (!mounted) return;
-
-            // gsap.context keeps things tidy on hot reload/unmount
-            ctx = gsap.context(() => {
-                if (textRef.current) {
-                    gsap.from(textRef.current, {
-                        y: 100,
-                        opacity: 0,
-                        duration: 1.2,
-                        ease: "power3.out",
-                        scrollTrigger: {
-                            trigger: textRef.current,
-                            start: "top 80%",
-                            toggleActions: "play none none reverse",
-                        },
-                    });
-                }
-
-                if (btnsRef.current && btnsRef.current.children.length) {
-                    gsap.from(Array.from(btnsRef.current.children), {
-                        x: -120,
-                        opacity: 0,
-                        duration: 1,
-                        ease: "power3.out",
-                        stagger: 0.25,
-                        scrollTrigger: {
-                            trigger: rootRef.current || btnsRef.current,
-                            start: "top 85%",
-                            toggleActions: "play none none reverse",
-                        },
-                    });
-                }
-            }, rootRef);
-        })();
-
-        return () => {
-            mounted = false;
-            if (ctx) ctx.revert();
-        };
-    }, []);
-
-    const [hov, setHov] = useState(false);
+export default function HeroSection() {
 
     return (
-        <section
-            id="/"
-            ref={rootRef}
-            className="relative w-full h-screen text-white overflow-hidden"
-        >
+        <section className="relative h-screen w-full overflow-hidden text-white bg-black">
             {/* Background Video */}
-            <video
-                autoPlay loop muted playsInline poster="/fall.png"
-                className="absolute inset-0 w-full h-full object-cover"
-            >
-                <source src="/bg.mp4" type="video/mp4" />
-            </video>
-            {/* Overlay (use bg-black/50 or bg-black bg-opacity-50) */}
-            <div className="absolute inset-0 bg-black/50 z-10" />
-
-
-
-            {/* Centered Text */}
-            <div
-                ref={textRef}
-                className="relative z-20 flex flex-col justify-center h-full sm:px-8 md:px-16 lg:px-24 px-12 mt-10"
-            >
-                <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-                    ADVANCED <br />
-                    <span className="text-transparent bg-clip-text bg-linear-to-r from-[#7C2FC0] via-[#D4187A] to-[#FF6D00]">AUTOBODY<br />
-                        SOLUTIONS.</span>
-                </h1>
-                <a
-                    href="#contact"
-                    onMouseEnter={() => setHov(true)}
-                    onMouseLeave={() => setHov(false)}
-                    className={`mt-6 max-w-40 ml-2 text-white font-semibold px-6 py-3 sm:text-base tracking-wider inline-block text-center gap-2.5 uppercase text-sm no-underline transition-all duration-200 ${hov
-                        ? "bg-linear-to-r from-[#D4187A] to-[#FF6D00] shadow-lg shadow-[#D4187A]/40 scale-105"
-                        : "bg-linear-to-r from-[#7C2FC0] to-[#D4187A] shadow-md shadow-[#7C2FC0]/40 scale-100"
-                        }`}
+            <div className="absolute inset-0">
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="h-full w-full object-cover"
                 >
-                    contact us
-                </a>
+                    <source src="/bg.mp4" type="video/mp4" />
+                </video>
             </div>
+
+            {/* Overlays */}
+            <div className="absolute inset-0 bg-black/40" />
+            <div className="absolute inset-0 bg-linear-to-b from-black/10 via-black/20 to-black/65" />
+
+            {/* Content */}
+            <div className="relative z-10 flex h-full items-end">
+                <div className="mx-auto grid h-full w-full max-w-350 grid-cols-12 px-6 sm:px-8 lg:px-10">
+                    {/* Left */}
+                    <div className="col-span-12 flex flex-col justify-end pb-14 sm:pb-16 md:pb-20 lg:col-span-8 lg:pl-24 lg:pb-24">
+
+                        {/* Small label + line - UPDATED COLOR CODE */}
+                        <div className="mb-5 inline-flex flex-col items-start pl-[2px] mt-40 md:mt-0">
+                            {/* Top Line with Multi-color linear */}
+                            <div className="mb-[10px] h-[2px] w-[115px] md:w-[135px] ml-40 bg-linear-to-r from-[#7C2FC0] via-[#D4187A] to-[#FF6D00]" />
+
+                            <p className="text-[13px] font-light uppercase tracking-[0.52em] text-white/95 sm:text-[14px]">
+                                Vehicle Repair Shop
+                            </p>
+
+                            {/* Bottom Line with Multi-color linear */}
+                            <div className="mt-[10px] h-[2px] w-[158px] bg-linear-to-r from-[#7C2FC0] via-[#D4187A] to-[#FF6D00]" />
+                        </div>
+
+                        {/* Heading */}
+                        <h1 className="text-5xl md:text-6xl font-bold leading-tight uppercase">
+                            ADVANCED <br />
+                            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#7C2FC0] via-[#D4187A] to-[#FF6D00]">
+                                AUTOBODY SOLUTIONS.
+                            </span>
+                        </h1>
+                    </div>
+
+                    {/* Right */}
+                    <div className="col-span-12 flex items-end justify-start pb-14 sm:pb-16 md:pb-20 lg:col-span-4 lg:justify-end lg:pb-24">
+                        <p className="max-w-[350px] text-[18px] font-light leading-[1.85] text-white/82 md:text-[19px] lg:text-[20px]">
+                            At Advanced Autobody Solutions, we deliver reliable, efficient detailing for personal
+                            cars and fleets, restoring showroom shine, extending vehicle life,
+                            and protecting your investment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            {/* Bottom fade */}
+            <div className="absolute inset-x-0 bottom-0 h-28 bg-linear-to-t from-black/80 to-transparent" />
         </section>
     );
 }
