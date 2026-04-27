@@ -43,7 +43,7 @@ const BrandFeaturesSection = () => {
           <div key={`mobile-${item.id}`} className="flex flex-col">
             {/* Text Area */}
             <div className="flex flex-col justify-center px-10 py-20 bg-[#08060F]">
-              <h2 className="text-6xl text-white mb-4">{item.title}</h2>
+              <h2 className="text-6xl text-transparent bg-clip-text bg-linear-to-r from-[#7C2FC0] via-[#D4187A] to-[#FF6D00] mb-4">{item.title}</h2>
               <p className="font-medium text-[#B8C0CC] text-lg leading-relaxed">
                 {item.desc}
               </p>
