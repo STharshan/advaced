@@ -4,7 +4,7 @@ const DentRemovalData = {
     // ─── HERO SECTION ────────────────────────────────────────
     hero: {
         backgroundImage:
-            "bg.png",
+            "a222.jpg",
         backLinkLabel: "Services",
         backLinkHref: "/services",
         title: "Bumper Repairs",
@@ -80,7 +80,7 @@ const DentRemovalData = {
                 title: "Basic",
                 description: "Essential system check.",
                 price: "68",
-                duration: "~30 min",
+                duration: "| ~30 min",
                 popular: false,
                 features: [
                     "Engine scan",
@@ -93,7 +93,7 @@ const DentRemovalData = {
                 title: "Full Diagnostic",
                 description: "Advanced full-system scan.",
                 price: "129",
-                duration: "~1 hr",
+                duration: "| ~1 hr",
                 popular: true,
                 features: [
                     "Everything in Basic",
@@ -106,7 +106,7 @@ const DentRemovalData = {
                 title: "Complete Diagnostic",
                 description: "Full inspection & performance testing.",
                 price: "189",
-                duration: "~2 hr",
+                duration: "| ~2 hr",
                 popular: false,
                 features: [
                     "Everything in Full",
@@ -153,10 +153,10 @@ const DentRemovalData = {
         viewAllHref: "/cases",
         items: [
             {
-                img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=800",
+                img: "/a3.webp",
             },
             {
-                img: "https://images.unsplash.com/photo-1484136540910-d66bb475348d?auto=format&fit=crop&q=80&w=800",
+                img: "/a4.webp",
             },
         ],
     },
@@ -164,7 +164,7 @@ const DentRemovalData = {
     // ─── BANNER SECTION ──────────────────────────────────────
     banner: {
         backgroundImage:
-            "https://images.unsplash.com/photo-1542362567-b07e54358753?q=80&w=1600&auto=format&fit=crop",
+            "/a5.webp",
         heading: "Get Your Free\nRepair Quote",
         subheading: "Quick, transparent pricing with no obligation.",
         ctaLabel: "Ask on WhatsApp",
@@ -185,7 +185,7 @@ const DentRemovalData = {
             },
             {
                 q: "Do I need to leave my car for the whole day?",
-                a: "Not always. Most repairs can be completed within a few hours. We'll give you a clear time estimate when you book."
+                a: "Not necessarily! Most jobs are completed the same day, though depending on the service and condition of your vehicle, some work may carry over into the next day. We'll always keep you updated on timings when you book."
             },
             {
                 q: "Will I get a warranty on the repair?",
@@ -199,7 +199,7 @@ const DentRemovalData = {
             },
             {
                 q: "Do you use original or aftermarket parts?",
-                a: "We use quality materials and manufacturer-matched paints to ensure the repair is seamless and long-lasting."
+                a: "We always aim to use genuine parts to ensure the highest quality finish. However, to help keep costs down for our customers, we can also source non-genuine or quality second-hand parts — the choice is always yours."
             },
             {
                 q: "Do you offer pick-up and drop-off services?",

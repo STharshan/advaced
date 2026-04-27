@@ -25,7 +25,8 @@ const BrandFeaturesSection = () => {
     {
       id: 2,
       title: "WHY US",
-      desc: "Every job comes with a 100% Satisfaction Guarantee and our Price Match Promise, backed by hundreds of 5-star reviews across Manchester.",
+      desc: "We are committed to exceptional workmanship on every repair, giving you complete peace of mind. All work is backed by our lifetime ownership guarantee, using high end products and following manufacturer guidelines. We never compromise on quality, ensuring your vehicle is restored to the highest standard!",
+      author: "Wes - Advanced Autobody Solutions",
       bgColor: "bg-[#D4187A]",
       type: "video",
       src: "/about.mp4",
@@ -72,10 +73,11 @@ const BrandFeaturesSection = () => {
             >
               {content.map((item) => (
                 <div key={item.id} className="flex flex-col justify-center px-24 h-1/2 bg-[#08060F]">
-                  <h2 className="text-8xl text-white mb-4">{item.title}</h2>
+                  <h2 className="text-8xl mb-4 text-transparent bg-clip-text bg-linear-to-r from-[#7C2FC0] via-[#D4187A] to-[#FF6D00]">{item.title}</h2>
                   <p className="font-medium text-[#B8C0CC] text-2xl max-w-lg leading-relaxed">
                     {item.desc}
                   </p>
+                  <p className='mt-5'>{item.author}</p>
                 </div>
               ))}
             </motion.div>

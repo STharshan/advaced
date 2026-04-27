@@ -4,7 +4,7 @@ const InsuranceRepairsData  = {
     // ─── HERO SECTION ────────────────────────────────────────
     hero: {
         backgroundImage:
-            "bg.png",
+            "a111.jpg",
         backLinkLabel: "Services",
         backLinkHref: "/services",
         title: "Insurance Repairs",
@@ -81,11 +81,11 @@ const InsuranceRepairsData  = {
                 title: "Minor Bodywork",
                 description: "Cosmetic & light damage.",
                 price: "POA",
-                duration: "Varies",
+                duration: "| Varies",
                 popular: false,
                 features: [
-                    "Small dent removal",
-                    "Scuff & scratch repair",
+                    "Small Paintless Dent Repair",
+                    "Scuff & Smart repair",
                     "Panel alignment",
                     "Insurance documentation",
                 ],
@@ -94,7 +94,7 @@ const InsuranceRepairsData  = {
                 title: "Standard Claim",
                 description: "Common accident repairs.",
                 price: "EXCESS",
-                duration: "TBD",
+                duration: "| TBD",
                 popular: true,
                 features: [
                     "Direct insurer liaison",
@@ -107,7 +107,7 @@ const InsuranceRepairsData  = {
                 title: "Major Repair",
                 description: "Structural & heavy damage.",
                 price: "POA",
-                duration: "Varies",
+                duration: "| Varies",
                 popular: false,
                 features: [
                     "Chassis alignment",
@@ -154,10 +154,10 @@ const InsuranceRepairsData  = {
         viewAllHref: "/cases",
         items: [
             {
-                img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=800",
+                img: "a18.webp",
             },
             {
-                img: "https://images.unsplash.com/photo-1484136540910-d66bb475348d?auto=format&fit=crop&q=80&w=800",
+                img: "a19.webp",
             },
         ],
     },
@@ -165,7 +165,7 @@ const InsuranceRepairsData  = {
     // ─── BANNER SECTION ──────────────────────────────────────
     banner: {
         backgroundImage:
-            "https://images.unsplash.com/photo-1542362567-b07e54358753?q=80&w=1600&auto=format&fit=crop",
+            "a20.webp",
         heading: "Start Your Insurance\nClaim Today",
         subheading: "Expert repairs with seamless insurance coordination.",
         ctaLabel: "Ask on WhatsApp",
@@ -181,6 +181,14 @@ const InsuranceRepairsData  = {
         ctaHref: "https://www.whatsapp.com/",
         itemsLeft: [
             {
+                q: "Do you provide a courtesy car?",
+                a: "For non-fault accidents, we do provide a courtesy car to keep you on the road while your vehicle is being repaired. For fault claims, we don't currently offer a free courtesy car, however in some cases we can arrange a paid hire vehicle. Get in touch and we'll do our best to help."
+            },
+            {
+                q: "Will my car be written off?",
+                a: "In some cases, an insurer may decide to write a vehicle off. However, if you'd prefer to keep your car, we will work directly with the insurer on your behalf to find the best possible solution to get your vehicle back on the road."
+            },
+            {
                 q: "Do I have to use my insurer's recommended repairer?",
                 a: "No. You have the legal right to choose where your vehicle is repaired. We provide professional, insurance-approved standard work."
             },
@@ -188,12 +196,12 @@ const InsuranceRepairsData  = {
                 q: "How long will the insurance approval take?",
                 a: "Usually between 24-72 hours once we have submitted the digital assessment and photos to your insurer."
             },
+        ],
+        itemsRight: [
             {
                 q: "Will you provide a courtesy car?",
                 a: "Depending on your policy and our availability, we can often arrange a courtesy vehicle to keep you on the road."
-            }
-        ],
-        itemsRight: [
+            },
             {
                 q: "What do I need to provide to start a claim?",
                 a: "Simply bring your vehicle in with your claim reference number and insurer details; we'll handle the rest."

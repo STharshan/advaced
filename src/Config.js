@@ -1,7 +1,9 @@
 const Config = {
     email: "info@advancedautobodysolutions.co.uk",
-    phoneDisplay: "+44 7440 366913",
-    phoneHref: "+447440366913", 
+    phoneDisplay: "0744 036 6913",
+    phoneHref: "+447440366913",
+    landphoneDisplay: "0161 399 4897",
+    landphoneHref: "+441613994897", 
     whatsappHref: "447440366913",
     addressUrl: "https://maps.app.goo.gl/FQc91mwj7UUoQ1Xz7",
     ansely: "https://www.ansely.co.uk/",

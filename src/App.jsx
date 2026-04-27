@@ -6,9 +6,9 @@ import ScrollToTop from "./components/ScrollToTop";
 import GDPRConsent from "./components/GDPRButton";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsConditions from "./components/Term";
-import DentRemovalPage from "./pages/DentRemoval";
+import DentRemovalPage from "./pages/PaintlessDentRepair";
 import BumperRepairPage from "./pages/BumperRepairs";
-import ScratchRepairPage from "./pages/ScratchRepair";
+import ScratchRepairPage from "./pages/SmartRepair";
 import ScrollToHash from "./components/ScrollToHash";
 import InsuranceRepairsPage from "./pages/InsuranceRepairs";
 import WheelRefurbishmentPage from "./pages/WheelRefurbishments";
@@ -22,7 +22,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/dent-removal" element={<DentRemovalPage />} />
+        <Route path="/paintless-dent-repairs" element={<DentRemovalPage />} />
         <Route path="/bumper-repair" element={<BumperRepairPage />} />
         <Route path="/scratch-repair" element={<ScratchRepairPage />} />
         <Route path="/insurance-repairs" element={<InsuranceRepairsPage />} />

@@ -96,6 +96,14 @@ export default function Footer() {
             </li>
             <li>
               <a
+                href={`tel:${Config.landphoneHref}`}
+                className="hover:text-white transition-colors block"
+              >
+                {Config.landphoneDisplay}
+              </a>
+            </li>
+            <li>
+              <a
                 href={`mailto:${Config.email}`}
                 className="hover:text-white transition-colors block break-all"
               >

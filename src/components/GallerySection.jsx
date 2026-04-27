@@ -12,6 +12,15 @@ const GallerySection = () => {
     { id: "4", image: "a4.jpg" },
     { id: "5", image: "a6.jpg" },
     { id: "6", image: "a7.jpg" },
+    { id: "7", image: "a8.webp" },
+    { id: "8", image: "a13.webp" },
+    { id: "9", image: "a30.jpg" },
+    { id: "10", image: "a4.webp" },
+    { id: "11", image: "a32.webp" },
+    { id: "12", image: "a28.webp" },
+    { id: "13", image: "a20.webp" },
+    { id: "14", image: "a23.webp" },
+    { id: "15", image: "a25.webp" },
   ];
 
   const scrollToCard = (index) => {
@@ -84,7 +93,7 @@ const GallerySection = () => {
             </div>
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl  leading-[0.9] tracking-tight">
               Discover Our<br />
-              <span className="text-[#7C2FC0]">Completed Projects</span>
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-[#7C2FC0] via-[#D4187A] to-[#FF6D00]">Completed Projects</span>
             </h1>
           </div>
 
@@ -110,7 +119,7 @@ const GallerySection = () => {
         <div className="relative py-6" style={{ perspective: '2000px' }}>
           <div
             ref={scrollContainerRef}
-            className="flex gap-4 sm:gap-8 overflow-x-auto overflow-visible scrollbar-hide scroll-smooth pb-12"
+            className="flex gap-14 sm:gap-40 overflow-x-auto overflow-visible scrollbar-hide scroll-smooth pb-12"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', scrollSnapType: 'x mandatory' }}
           >
             <div className="shrink-0" style={{ width: 'calc(50vw - 160px)' }}></div>
@@ -118,7 +127,7 @@ const GallerySection = () => {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="project-card shrink-0 w-70 py-15 sm:w-88 md:w-113 transition-all duration-700 ease-out cursor-pointer"
+                className="project-card shrink-0 w-65 py-15 sm:w-88 md:w-143 lg:w-113 transition-all duration-700 ease-out cursor-pointer"
                 style={{
                   transform: index === activeIndex
                     ? 'scale(1.05) translateZ(100px) translateY(-20px)'

@@ -3,17 +3,17 @@ import { ArrowRight, Wrench, Shield, Paintbrush, ShieldCheck, Disc } from "lucid
 
 const services = [
   {
-    id: 1,
+    id: 4,
     rotation: "rotate-0",
-    title: "Scratch Repair",
-    desc: "Whether it's light wear and tear or a deep key scratch running the full length of your door, we can repair any scratch on any vehicle. Paint-matched and finished to an immaculate standard.",
-    borderFrom: "from-[#7C2FC0]",
-    borderTo: "to-[#D4187A]",
-    icon: Paintbrush,
-    linearId: "grad1",
-    colors: ["#7C2FC0", "#D4187A"]
+    title: "Insurance Repairs",
+    desc: "We take the hassle out of accident repairs by working directly with your insurer, restoring your vehicle to its pre-accident condition with precision and care.",
+    borderFrom: "from-[#FF6D00]",
+    borderTo: "to-[#FFB800]",
+    icon: ShieldCheck,
+    linearId: "grad3",
+    colors: ["#FF6D00", "#FFB800"]
   },
-  {
+    {
     id: 2,
     rotation: "rotate-1",
     title: "Bumper Repairs",
@@ -24,32 +24,10 @@ const services = [
     linearId: "grad2",
     colors: ["#D4187A", "#FF6D00"]
   },
-  {
-    id: 3,
-    rotation: "rotate-2",
-    title: "Dent Removal",
-    desc: "Using top-of-the-range dent removal equipment, we restore any dent back to its original position with a flawless finish every time. No unnecessary repainting, no filler, just precision repair.",
-    borderFrom: "from-[#FF6D00]",
-    borderTo: "to-[#FFB800]",
-    icon: Wrench,
-    linearId: "grad3",
-    colors: ["#FF6D00", "#FFB800"]
-  },
-  {
-    id: 4,
-    rotation: "rotate-3",
-    title: "Insurance Repairs",
-    desc: "We take the hassle out of accident repairs by working directly with your insurer, restoring your vehicle to its pre-accident condition with precision and care.",
-    borderFrom: "from-[#FF6D00]",
-    borderTo: "to-[#FFB800]",
-    icon: ShieldCheck,
-    linearId: "grad3",
-    colors: ["#FF6D00", "#FFB800"]
-  },
-  {
+    {
     id: 5,
-    rotation: "rotate-4",
-    title: "Wheel Refurbishments",
+    rotation: "rotate-2",
+    title: "Wheel Refurbishment",
     desc: "Using advanced refurbishment techniques and high-quality materials, we restore your wheels to their original condition with a smooth, factory-like finish.",
     borderFrom: "from-[#FF6D00]",
     borderTo: "to-[#FFB800]",
@@ -57,6 +35,32 @@ const services = [
     linearId: "grad3",
     colors: ["#FF6D00", "#FFB800"]
   },
+    {
+    id: 3,
+    rotation: "rotate-3",
+    title: "Paintless Dent Repair",
+    desc: "Using top-of-the-range paintless dent repair equipment, we restore any dent back to its original position with a flawless finish every time. No unnecessary repainting, no filler, just precision repair.",
+    borderFrom: "from-[#FF6D00]",
+    borderTo: "to-[#FFB800]",
+    icon: Wrench,
+    linearId: "grad3",
+    colors: ["#FF6D00", "#FFB800"]
+  },
+  {
+    id: 1,
+    rotation: "rotate-4",
+    title: "Smart repair",
+    desc: "Whether it's light wear and tear or a deep key scratch running the full length of your door, we can repair any scratch on any vehicle. Paint-matched and finished to an immaculate standard.",
+    borderFrom: "from-[#7C2FC0]",
+    borderTo: "to-[#D4187A]",
+    icon: Paintbrush,
+    linearId: "grad1",
+    colors: ["#7C2FC0", "#D4187A"]
+  },
+
+
+  
+
 ];
 
 function ServiceCard({ service, translateY, zIndex, opacity, isMobile }) {
@@ -193,13 +197,13 @@ export default function ServicesSection() {
 
               <h2 className="text-white uppercase tracking-wide leading-none m-0 text-[clamp(2.2rem,3.8vw,3.5rem)]">
                 Our 5-Star Rated<br />
-                <span className="text-transparent bg-clip-text bg-linear-to-r from-[#7C2FC0] to-[#D4187A] italic">
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-[#7C2FC0] via-[#D4187A] to-[#FF6D00] italic">
                   Services
                 </span>
               </h2>
 
               <p className=" font-medium text-[#B8C0CC] text-sm md:text-base leading-[1.85] max-w-md m-0">
-                At Advanced Autobody Solutions, we go beyond surface-level fixes. Every repair is carried out with professional-grade equipment and a commitment to making your vehicle look exactly as it should perfect.
+                At Advanced Autobody Solutions, we go above and beyond with every repair. Using professional-grade equipment and placing customer satisfaction at the core of everything we do, we are committed to delivering results that make your vehicle look exactly as it should perfect.
               </p>
 
               <div className="flex items-center gap-2">

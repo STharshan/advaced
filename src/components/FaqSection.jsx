@@ -3,36 +3,28 @@ import { Plus } from 'lucide-react';
 
 const faqData = [
   {
-    question: "How long will my repair take?",
-    answer: "Most repairs are completed the same day or within 24 hours depending on the extent of the damage. Scratches and minor dents can often be turned around in just a few hours. We'll always give you a clear timeframe when you book so you're never left guessing."
+    question: "Can you match car’s exact paint?",
+    answer: "When we repair and repaint a panel on your vehicle, we don’t paint that panel in isolation. Even using the exact manufacturer’s paint code, slight colour variations can occur due to age, sunlight exposure, and normal production differences. To achieve a perfect finish, we blend the new paint into the adjacent panels. This allows the colour to transition gradually, rather than stopping sharply at the edge of the repair. Blending ensures there’s no visible difference between panels and gives a seamless, factory quality result. Without this step, a colour mismatch can sometimes be noticeable, particularly in certain lighting. It’s a standard professional refinishing process and key to making the repair completely invisible. Condense this to it and also mention they use a spectrometer."
   },
   {
-    question: "Do you offer a guarantee on your repairs?",
-    answer: "Yes. Every repair we carry out comes with a 100% Satisfaction Guarantee. If you're not completely happy with the result, we'll make it right. That's a promise we stand behind on every single job."
+    question: "How long wil it take?",
+    answer: "mart repairs are completed in a day or few hours - bigger jobs 2-3 days we will tell u so not left guessing."
   },
   {
-    question: "Can you match my car's exact paint colour?",
-    answer: "Absolutely. We use professional paint-matching technology to ensure the repaired area blends seamlessly with the rest of your vehicle. Whether your car is a standard colour or a custom finish, the result will be indistinguishable from the original."
+    question: "Guarantee?",
+    answer: "life time ownership guarantee."
   },
   {
     question: "Do I need to go through my insurance?",
-    answer: "Not at all. Many of our customers choose to pay directly to avoid affecting their no-claims bonus. Our prices are kept fair and affordable specifically so that going through insurance isn't always necessary. We'll give you a transparent quote upfront so you can make the best decision for your situation."
+    answer: "If at fault you can chose us as your chosen repairer or if it it’s non fault then we can deal with your full claim through 3rd part accident manangent company."
   },
   {
     question: "How do I get a quote?",
-    answer: "Getting a quote is simple and completely free. You can call us, message us on WhatsApp (+44 7440 366913), fill in the contact form on this page, or send us a photo of the damage via email. We aim to respond to all enquiries as quickly as possible."
+    answer: "add the cta to form Fill."
   },
   {
-    question: "Do you offer a price match guarantee?",
-    answer: "Yes. If you've received a like-for-like quote from another reputable bodywork specialist, bring it to us and we'll match it. We believe you should never have to choose between quality and cost, with us, you get both."
-  },
-  {
-    question: "What types of vehicles do you work on?",
-    answer: "We work on all makes and models: from everyday hatchbacks and family cars to prestige vehicles and vans. Whatever you drive, our team has the experience and equipment to handle the repair to the highest standard."
-  },
-  {
-    question: "Where are you located and do you have parking?",
-    answer: "We're based at Unit 10, Orchard Trading Estate, Langley Road South, Manchester. Our workshop is easily accessible and has on-site parking available, so dropping your vehicle off is completely hassle-free."
+    question: "Price match guarantee?",
+    answer: "We offer the best price for the best quality - we won’t price match if it means quality is compromised."
   }
 ];
 
@@ -58,7 +50,7 @@ const FAQSection = () => {
             </div>
             <h2 className="text-[2.5rem] md:text-[4.5rem] lg:text-[6rem] text-white leading-[0.9] tracking-normal">
              Questions, <br className="hidden md:block" />
-              <span className="text-[#7C2FC0] italic block text-[1.8rem] md:text-[3.5rem] lg:text-[4.5rem]">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-[#7C2FC0] via-[#D4187A] to-[#FF6D00] italic block text-[1.8rem] md:text-[3.5rem] lg:text-[4.5rem]">
                 Answered With Honesty
               </span>
             </h2>

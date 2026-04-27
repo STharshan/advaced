@@ -28,7 +28,7 @@ const HeroSection = ({ data }) => {
         <div className="max-w-2xl">
           <a
             href={backLinkHref}
-            className="inline-flex items-center gap-2 text-white/70 hover:text-white mb-6"
+            className="inline-flex items-center gap-2 text-black font-semibold hover:text-white mb-6"
           >
             {backLinkLabel}
           </a>
@@ -37,7 +37,7 @@ const HeroSection = ({ data }) => {
             {title}
           </h1>
 
-          <p className="text-[#B8C0CC] mb-8 max-w-lg">{subtitle}</p>
+          <p className="text-[#D4187A] mb-8 max-w-lg">{subtitle}</p>
 
           <a
            href={`https://wa.me/${Config.whatsappHref}`}

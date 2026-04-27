@@ -62,11 +62,11 @@ const Navbar = () => {
   };
 
   const serviceItems = [
-    { label: "Dent Removal", target: "/dent-removal" },
+    { label: "Paintless Dent Repair", target: "/paintless-dent-repairs" },
     { label: "Bumper Repair", target: "/bumper-repair" },
-    { label: "Scratch Repair", target: "/scratch-repair" },
-    { label: "Insurance Repairs", target: "/insurance-repairs" },
-    { label: "Wheel Refurbishments", target: "/wheel-refurbishments" },
+    { label: "Smart repair", target: "/scratch-repair" },
+    { label: "Insurance Repair", target: "/insurance-repairs" },
+    { label: "Wheel Refurbishment", target: "/wheel-refurbishments" },
   ];
 
   const menuItems = [

@@ -4,10 +4,10 @@ const WheelRefurbishmentData = {
     // ─── HERO SECTION ────────────────────────────────────────
     hero: {
         backgroundImage:
-            "https://framerusercontent.com/images/LmQpQxrCvAgtMxoBkA6UJXf6QA.webp",
+            "a8.jpg",
         backLinkLabel: "Services",
         backLinkHref: "/services",
-        title: "Wheel Refurbishments",
+        title: "Wheel Refurbishment",
         subtitle:
             "Scuffed, scratched, or corroded wheels? We restore your alloys back to a flawless, like-new condition with precision and care—no matter the level of damage.",
         ctaLabel: "Get a Free Quote",
@@ -80,8 +80,8 @@ const WheelRefurbishmentData = {
             {
                 title: "Standard Alloy",
                 description: "Single wheel refurb.",
-                price: "85",
-                duration: "~1 day",
+                price: "80",
+                duration: "| ~1 day",
                 popular: false,
                 features: [
                     "Kerb damage repair",
@@ -93,8 +93,8 @@ const WheelRefurbishmentData = {
             {
                 title: "Diamond Cut",
                 description: "Precision CNC finish.",
-                price: "120",
-                duration: "~2 days",
+                price: "100",
+                duration: "| ~2 days",
                 popular: true,
                 features: [
                     "Lathe-cut precision",
@@ -104,16 +104,41 @@ const WheelRefurbishmentData = {
                 ],
             },
             {
-                title: "Full Set Refresh",
+                title: "Full Set Refresh - Painted",
                 description: "Complete 4-wheel overhaul.",
                 price: "300",
-                duration: "~2-3 days",
+                duration: "| ~2-3 days",
                 popular: false,
                 features: [
                     "All 4 wheels restored",
                     "Custom color options",
                     "Deep chemical clean",
                     "New valves included",
+                ],
+            },
+            {
+                title: "Full Set Refresh - Diamond Cut",
+                description: "Complete 4-wheel precision finish.",
+                price: "360",
+                duration: "| ~3 days",
+                popular: false,
+                features: [
+                    "All 4 wheels lathe-cut",
+                    "Corrosion removal",
+                    "Premium lacquer seal",
+                    "Factory-spec finish",
+                ],
+            },
+            {
+                title: "Caliper Paint",
+                description: "Bold brake caliper finish.",
+                price: "200",
+                duration: "| (or £100 when paired with a full set refurb or colour change)",
+                popular: false,
+                features: [
+                    "Professional caliper paint",
+                    "Heat-resistant finish",
+                    "Custom colour options",
                 ],
             },
         ],
@@ -154,10 +179,10 @@ const WheelRefurbishmentData = {
         viewAllHref: "/cases",
         items: [
             {
-                img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=800",
+                img: "a9.png",
             },
             {
-                img: "https://images.unsplash.com/photo-1484136540910-d66bb475348d?auto=format&fit=crop&q=80&w=800",
+                img: "a10.jpg",
             },
         ],
     },
@@ -165,7 +190,7 @@ const WheelRefurbishmentData = {
     // ─── BANNER SECTION ──────────────────────────────────────
     banner: {
         backgroundImage:
-            "https://images.unsplash.com/photo-1542362567-b07e54358753?q=80&w=1600&auto=format&fit=crop",
+            "a30.jpg",
         heading: "Restore Your Wheels\nTo Factory Fresh",
         subheading: "Quick, professional refurbishment starting from £85.",
         ctaLabel: "Ask on WhatsApp",

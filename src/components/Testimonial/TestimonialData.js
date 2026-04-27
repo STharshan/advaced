@@ -1,13 +1,7 @@
 export const testimonials = [
   {
     quote:
-      `Massive thanks to Advanced Autobody Solutions for the incredible job they did on my car. They fitted my full Maxton body kit, installed DRL lights, and refurbished my alloys and the results are unreal.
-
- 
-
-The attention to detail is top-tier, the fitment is perfect, and the car looks absolutely stunning. You can tell they really take pride in their work. Great communication, quick turnaround, and genuinely skilled craftsmanship.
-
-Highly recommend to anyone looking for quality work and a proper professional finish. I’ll definitely be back!`,
+      `Massive thanks to Advanced Autobody Solutions for the incredible job they did on my car. They fitted my full Maxton body kit, installed DRL lights, and refurbished my alloys and the results are unreal. The attention to detail is top-tier, the fitment is perfect, and the car looks absolutely stunning. You can tell they really take pride in their work. Great communication, quick turnaround, and genuinely skilled craftsmanship. Highly recommend to anyone looking for quality work and a proper professional finish. I’ll definitely be back!`,
     author: "Jamie White",
   },
   {

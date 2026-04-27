@@ -3,10 +3,14 @@ import { ChevronDown, X, ImagePlus } from 'lucide-react';
 import Config from '../Config.js';
 
 const ContactSection = () => {
+  // Initialize state with ALL fields
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     email: '',
+    year: '',
+    make: '',
+    model: '',
     service: '',
     note: ''
   });
@@ -29,13 +33,11 @@ const ContactSection = () => {
         preview: URL.createObjectURL(file)
       }));
     setImages(prev => [...prev, ...newImages].slice(0, 4));
-    // reset input so same file can be re-added if removed
     e.target.value = '';
   };
 
   const removeImage = (index) => {
     setImages(prev => {
-      // Memory management: Revoke URL before removing from state
       URL.revokeObjectURL(prev[index].preview);
       return prev.filter((_, i) => i !== index);
     });
@@ -44,32 +46,51 @@ const ContactSection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Build WhatsApp text message
+    // 1. Construct the formatted WhatsApp message
     const message =
       `*New Quote Request: Advanced Autobody*%0A%0A` +
-      `Name: ${encodeURIComponent(formData.name)}%0A` +
-      `Phone: ${encodeURIComponent(formData.phone)}%0A` +
-      `Email: ${encodeURIComponent(formData.email)}%0A` +
-      `Repair Type: ${encodeURIComponent(formData.service)}%0A` +
-      `Notes: ${encodeURIComponent(formData.note)}%0A%0A` +
-      (images.length > 0
-        ? `_${images.length} photo(s) attached please check images below._`
-        : ``);
+      `*CUSTOMER DETAILS*%0A` +
+      `• Name: ${encodeURIComponent(formData.name)}%0A` +
+      `• Phone: ${encodeURIComponent(formData.phone)}%0A` +
+      `• Email: ${encodeURIComponent(formData.email)}%0A%0A` +
 
-    // Open WhatsApp chat
+      `*VEHICLE INFO*%0A` +
+      `• Year: ${encodeURIComponent(formData.year || 'Not specified')}%0A` +
+      `• Make: ${encodeURIComponent(formData.make)}%0A` +
+      `• Model: ${encodeURIComponent(formData.model)}%0A%0A` +
+
+      `*REPAIR DETAILS*%0A` +
+      `• Repair Type: ${encodeURIComponent(formData.service)}%0A` +
+      `• Notes: ${encodeURIComponent(formData.note)}%0A%0A` +
+
+      (images.length > 0
+        ? `_ ${images.length} photo(s) attached. Please check current browser tabs to save/send images._`
+        : `_No photos attached._`);
+
+    // 2. Open WhatsApp chat
     window.open(`https://wa.me/${Config.whatsappHref}?text=${message}`, '_blank');
 
+    // 3. Open image previews in new tabs so user can copy/paste them into WhatsApp
     if (images.length > 0) {
       images.forEach((img) => {
         window.open(img.preview, '_blank');
       });
     }
 
-    // --- FIX: Memory Management & State Reset ---
-    setFormData({ name: '', phone: '', email: '', service: '', note: '' });
-    
+    // 4. Reset Form State
+    setFormData({
+      name: '',
+      phone: '',
+      email: '',
+      year: '',
+      make: '',
+      model: '',
+      service: '',
+      note: ''
+    });
+
+    // 5. Clear Images and Revoke URLs
     setImages(prev => {
-      // Properly revoke all preview URLs to prevent memory leaks
       prev.forEach(img => URL.revokeObjectURL(img.preview));
       return [];
     });
@@ -103,7 +124,7 @@ const ContactSection = () => {
           <div className="flex flex-col justify-between h-full py-4">
             <div className="max-w-xl">
               <h1 className="text-[4rem] md:text-[5.5rem] lg:text-[7rem] text-white leading-[0.9] tracking-normal mb-6">
-                <span className="text-[#7C2FC0] italic text-[3rem] md:text-[4.5rem] lg:text-[5.5rem]">
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-[#7C2FC0] via-[#D4187A] to-[#FF6D00] italic text-[3rem] md:text-[4.5rem] lg:text-[5.5rem]">
                   Get In Touch
                 </span>
               </h1>
@@ -150,15 +171,9 @@ const ContactSection = () => {
                 <div className="space-y-1">
                   <label className="text-[10px] uppercase tracking-widest font-bold text-[#D4187A]">Phone Number</label>
                   <input
-                    type="tel" 
-                    name="phone" 
-                    value={formData.phone}
-                    onChange={handleChange} 
-                    placeholder="07123 456789" 
-                    required
-                    /* --- FIX: Phone Validation --- */
+                    type="tel" name="phone" value={formData.phone}
+                    onChange={handleChange} placeholder="07123 456789" required
                     pattern="[0-9+\s\-\(\)]{7,15}"
-                    title="Please enter a valid phone number (7-15 digits)"
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[#7C2FC0] transition-all"
                   />
                 </div>
@@ -166,7 +181,7 @@ const ContactSection = () => {
 
               {/* Email */}
               <div className="space-y-1">
-                <label className="text-[10px] uppercase tracking-widest font-bold text-[#D4187A] ">Email Address</label>
+                <label className="text-[10px] uppercase tracking-widest font-bold text-[#D4187A]">Email Address</label>
                 <input
                   type="email" name="email" value={formData.email}
                   onChange={handleChange} placeholder="your@email.com" required
@@ -174,9 +189,37 @@ const ContactSection = () => {
                 />
               </div>
 
+              {/* Vehicle Info Row (Year, Make, Model) */}
+              <div className="grid grid-cols-3 gap-4">
+                <div className="col-span-1 space-y-1">
+                  <label className="text-[10px] uppercase tracking-widest font-bold text-[#D4187A]">Year</label>
+                  <input
+                    type="text" name="year" value={formData.year}
+                    onChange={handleChange} placeholder="2026"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white focus:border-[#7C2FC0] outline-none transition-all"
+                  />
+                </div>
+                <div className="col-span-1 space-y-1">
+                  <label className="text-[10px] uppercase tracking-widest font-bold text-[#D4187A]">Make</label>
+                  <input
+                    type="text" name="make" value={formData.make}
+                    onChange={handleChange} placeholder="BMW" required
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white focus:border-[#7C2FC0] outline-none transition-all"
+                  />
+                </div>
+                <div className="col-span-1 space-y-1">
+                  <label className="text-[10px] uppercase tracking-widest font-bold text-[#D4187A]">Model</label>
+                  <input
+                    type="text" name="model" value={formData.model}
+                    onChange={handleChange} placeholder="3 Series" required
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-white focus:border-[#7C2FC0] outline-none transition-all"
+                  />
+                </div>
+              </div>
+
               {/* Repair Type */}
               <div className="space-y-1">
-                <label className="text-[10px] uppercase tracking-widest font-bold text-[#D4187A] ">Type of Repair</label>
+                <label className="text-[10px] uppercase tracking-widest font-bold text-[#D4187A]">Type of Repair</label>
                 <div className="relative">
                   <select
                     name="service" value={formData.service}
@@ -184,30 +227,26 @@ const ContactSection = () => {
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white appearance-none focus:outline-none focus:border-[#7C2FC0] transition-all cursor-pointer"
                   >
                     <option value="" className="bg-[#08060F]">Select damage type</option>
-                    <option value="Scratch" className="bg-[#08060F]">Scratch Repair</option>
-                    <option value="Bumper" className="bg-[#08060F]">Bumper Scuff</option>
-                    <option value="Dent" className="bg-[#08060F]">Dent Removal</option>
-                    <option value="Other" className="bg-[#08060F]">Other / Multiple</option>
+                    <option value="Insurance Repair" className="bg-[#08060F]">Insurance Repair</option>
+                    <option value="Bumper Repair" className="bg-[#08060F]">Bumper Repair</option>
+                    <option value="Wheel Refurbishment" className="bg-[#08060F]">Wheel Refurbishment</option>
+                    <option value="Dent" className="bg-[#08060F]">Paintless Dent Repair</option>
+                    <option value="Smart repair" className="bg-[#08060F]">Smart Repair</option>
                   </select>
                   <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-[#FF6D00] pointer-events-none" size={18} />
                 </div>
               </div>
 
-              {/* IMAGE UPLOAD */}
+              {/* Image Upload UI */}
               <div className="space-y-2">
-                <label className="text-[10px] uppercase tracking-widest font-bold text-[#D4187A] ">
+                <label className="text-[10px] uppercase tracking-widest font-bold text-[#D4187A]">
                   Upload Photos <span className="text-white/30 normal-case tracking-normal font-normal">(up to 4)</span>
                 </label>
-
                 <input
                   ref={fileInputRef}
-                  type="file"
-                  accept="image/*"
-                  multiple
-                  className="hidden"
+                  type="file" accept="image/*" multiple className="hidden"
                   onChange={handleImageChange}
                 />
-
                 {images.length < 4 && (
                   <button
                     type="button"
@@ -215,11 +254,7 @@ const ContactSection = () => {
                     className="w-full bg-white/5 border border-dashed border-white/20 rounded-xl px-4 py-4 flex items-center justify-center gap-3 text-white/50 text-sm hover:border-[#7C2FC0] hover:text-white/80 hover:bg-white/8 transition-all group"
                   >
                     <ImagePlus size={20} className="text-[#FF6D00] group-hover:scale-110 transition-transform" />
-                    <span>
-                      {images.length === 0
-                        ? 'Click to add photos of the damage'
-                        : `Add more photos (${images.length}/4)`}
-                    </span>
+                    <span>{images.length === 0 ? 'Click to add photos of the damage' : `Add more photos (${images.length}/4)`}</span>
                   </button>
                 )}
 
@@ -227,44 +262,31 @@ const ContactSection = () => {
                   <div className="grid grid-cols-4 gap-2 mt-2">
                     {images.map((img, i) => (
                       <div key={i} className="relative group rounded-xl overflow-hidden aspect-square border border-white/10">
-                        <img
-                          src={img.preview}
-                          loading="lazy"
-                          alt={`Upload ${i + 1}`}
-                          className="w-full h-full object-cover"
-                        />
+                        <img src={img.preview} alt={`Upload ${i + 1}`} className="w-full h-full object-cover" />
                         <button
-                          type="button"
-                          onClick={() => removeImage(i)}
+                          type="button" onClick={() => removeImage(i)}
                           className="absolute top-1 right-1 bg-black/70 hover:bg-[#D4187A] text-white rounded-full p-0.5 opacity-0 group-hover:opacity-100 transition-all"
-                          aria-label="Remove image"
                         >
                           <X size={12} />
                         </button>
-                        <div className="absolute bottom-1 left-1 bg-black/60 text-white text-[10px] px-1.5 py-0.5 rounded-md ">
-                          {i + 1}
-                        </div>
                       </div>
                     ))}
                   </div>
                 )}
-                <p className="text-[11px] text-white/30">
-                  Photos will open alongside WhatsApp so you can attach them in the chat.
-                </p>
               </div>
 
               {/* Notes */}
               <div className="space-y-1">
-                <label className="text-[10px] uppercase tracking-widest font-bold text-[#D4187A] ">Additional Notes</label>
+                <label className="text-[10px] uppercase tracking-widest font-bold text-[#D4187A]">Additional Notes</label>
                 <textarea
                   name="note" value={formData.note}
                   onChange={handleChange} rows="2"
-                  placeholder="Tell us more..." required
+                  placeholder="Tell us more about the damage..." required
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[#7C2FC0] transition-all resize-none"
                 />
               </div>
 
-              {/* Submit */}
+              {/* Submit Button */}
               <button
                 type="submit"
                 className="group w-full flex items-center justify-center gap-3 bg-[#FF6D00] text-[#08060F] py-4 rounded-xl font-bold text-sm uppercase tracking-widest hover:bg-[#FFB800] transition-all shadow-lg"
@@ -274,7 +296,7 @@ const ContactSection = () => {
               </button>
 
               <p className="text-[11px] text-[#B8C0CC]/60 text-center">
-                By submitting this form, you agree to us processing your details to respond to your enquiry.
+                By submitting, you agree to our processing of your details for the quote request.
               </p>
             </form>
           </div>

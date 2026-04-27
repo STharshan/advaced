@@ -20,7 +20,7 @@ const PricingCard = ({ title, description, price, duration, features, popular })
 
       <div className="flex items-center gap-3 mb-6">
         <span className="text-3xl font-bold text-[#FFB800]">£{price}</span>
-        <span className="text-[#B8C0CC] text-sm">| {duration}</span>
+        <span className="text-[#B8C0CC] text-sm">{duration}</span>
       </div>
 
       <p className="text-[#FF6D00] font-medium mb-3">Includes:</p>
