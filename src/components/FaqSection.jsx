@@ -36,28 +36,28 @@ const FAQSection = () => {
   };
 
   return (
-    <section id="faq" className="bg-[#08060F] py-12 md:py-24 px-6 md:px-12 lg:px-24 min-h-screen">
+    <section id="faq" className="bg-[#08060F] px-4 py-10 md:px-12 md:py-24 lg:px-24 md:min-h-screen">
       <div className="max-w-360 mx-auto w-full">
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-24 items-start">
           
-          {/* Left Column: Headline - Sticky on both Mobile and Desktop */}
-          <div className="flex flex-col gap-4 md:gap-6 sticky top-0 md:top-32 bg-[#08060F] z-20 py-6 md:py-0 w-full border-b border-white/5 md:border-none">
+          {/* Left Column: Keep desktop sticky, let mobile flow naturally */}
+          <div className="flex w-full flex-col gap-4 border-b border-white/5 pb-6 md:gap-6 md:border-none md:pb-0 lg:sticky lg:top-32 lg:bg-[#08060F] lg:z-20">
             <div className="flex items-center gap-3">
               <div className="w-2 h-2 rounded-full bg-[#FF6D00]" />
               <span className="text-[#B8C0CC] text-sm  tracking-widest uppercase">
                 FAQ
               </span>
             </div>
-            <h2 className="text-[2.5rem] md:text-[4.5rem] lg:text-[6rem] text-white leading-[0.9] tracking-normal">
+            <h2 className="text-[2rem] leading-[0.95] tracking-normal text-white sm:text-[2.4rem] md:text-[4.5rem] lg:text-[6rem]">
              Questions, <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-[#7C2FC0] via-[#D4187A] to-[#FF6D00] italic block text-[1.8rem] md:text-[3.5rem] lg:text-[4.5rem]">
+              <span className="block text-[1.45rem] italic text-transparent bg-clip-text bg-linear-to-r from-[#7C2FC0] via-[#D4187A] to-[#FF6D00] sm:text-[1.8rem] md:text-[3.5rem] lg:text-[4.5rem]">
                 Answered With Honesty
               </span>
             </h2>
           </div>
 
           {/* Right Column: Accordion - Scrolls while heading stays fixed */}
-          <div className="flex flex-col gap-4 w-full pt-4 md:pt-0">
+          <div className="flex w-full flex-col gap-3 pt-2 md:gap-4 md:pt-0">
             {faqData.map((faq, index) => (
               <div 
                 key={index}
@@ -69,15 +69,15 @@ const FAQSection = () => {
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex items-center justify-between p-5 md:p-8 text-left transition-colors"
+                  className="flex w-full items-start justify-between gap-4 p-4 text-left transition-colors md:items-center md:p-8"
                 >
-                  <span className={`text-lg md:text-2xl font-semibold tracking-wide transition-colors duration-300 ${
+                  <span className={`pr-2 text-base leading-snug font-semibold tracking-wide transition-colors duration-300 sm:text-lg md:text-2xl ${
                     openIndex === index ? 'text-[#FFB800]' : 'text-[#B8C0CC]'
                   }`}>
                     {faq.question}
                   </span>
                   
-                  <div className={`shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-xl flex items-center justify-center transition-all duration-500 ${
+                  <div className={`mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-xl transition-all duration-500 md:mt-0 md:h-10 md:w-10 ${
                     openIndex === index ? 'bg-[#FF6D00] rotate-45 shadow-[0_0_20px_rgba(255,109,0,0.4)]' : 'bg-white/5'
                   }`}>
                     <Plus size={18} className={openIndex === index ? 'text-[#08060F]' : 'text-[#FF6D00]'} />
@@ -86,11 +86,11 @@ const FAQSection = () => {
 
                 <div 
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                    openIndex === index ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
+                    openIndex === index ? 'max-h-[36rem] opacity-100 md:max-h-80' : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <div className="px-5 md:px-8 pb-8">
-                    <p className="text-[#B8C0CC] text-base md:text-lg leading-relaxed max-w-[95%] font-medium">
+                  <div className="px-4 pb-5 md:px-8 md:pb-8">
+                    <p className="max-w-full text-sm leading-7 font-medium text-[#B8C0CC] sm:text-base md:max-w-[95%] md:text-lg">
                       {faq.answer}
                     </p>
                   </div>
