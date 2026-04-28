@@ -30,7 +30,7 @@ const offices = [
   {
     id: 0, city: "Salford", country: "Greater Manchester", lat: 53.4875, lng: -2.2901,
     subs: [
-      { name: "Salford City Centre", lat: 53.483, lng: -2.293 },
+      { name: "Salford City Centre", lat: 53.4875, lng: -2.2901 },
       { name: "Eccles", lat: 53.4839, lng: -2.3341 },
       { name: "Swinton", lat: 53.514, lng: -2.337 },
       { name: "Worsley", lat: 53.503, lng: -2.383 },
@@ -45,7 +45,7 @@ const offices = [
   {
     id: 1, city: "Stockport", country: "Greater Manchester", lat: 53.4106, lng: -2.1575,
     subs: [
-      { name: "Stockport Town Centre", lat: 53.408, lng: -2.157 },
+      { name: "Stockport Town Centre", lat: 53.4106, lng: -2.1575 },
       { name: "Cheadle", lat: 53.394, lng: -2.214 },
       { name: "Bramhall", lat: 53.358, lng: -2.166 },
       { name: "Hazel Grove", lat: 53.376, lng: -2.11 },
@@ -60,7 +60,7 @@ const offices = [
   {
     id: 2, city: "Bolton", country: "Greater Manchester", lat: 53.5781, lng: -2.4282,
     subs: [
-      { name: "Bolton Town Centre", lat: 53.576, lng: -2.429 },
+      { name: "Bolton Town Centre", lat: 53.5781, lng: -2.4282 },
       { name: "Horwich", lat: 53.601, lng: -2.548 },
       { name: "Farnworth", lat: 53.55, lng: -2.404 },
       { name: "Westhoughton", lat: 53.549, lng: -2.524 },
@@ -75,7 +75,7 @@ const offices = [
   {
     id: 3, city: "Wigan", country: "Greater Manchester", lat: 53.5450, lng: -2.6325,
     subs: [
-      { name: "Wigan Town Centre", lat: 53.544, lng: -2.631 },
+      { name: "Wigan Town Centre", lat: 53.5450, lng: -2.6325 },
       { name: "Leigh", lat: 53.497, lng: -2.518 },
       { name: "Atherton", lat: 53.523, lng: -2.494 },
       { name: "Hindley", lat: 53.533, lng: -2.577 },
@@ -90,7 +90,7 @@ const offices = [
   {
     id: 4, city: "Rochdale", country: "Greater Manchester", lat: 53.6097, lng: -2.1561,
     subs: [
-      { name: "Rochdale Town Centre", lat: 53.616, lng: -2.155 },
+      { name: "Rochdale Town Centre", lat: 53.6097, lng: -2.1561 },
       { name: "Heywood", lat: 53.59, lng: -2.219 },
       { name: "Middleton", lat: 53.55, lng: -2.2 },
       { name: "Milnrow", lat: 53.611, lng: -2.112 },
@@ -120,6 +120,7 @@ const offices = [
   {
     id: 6, city: "Trafford", country: "Greater Manchester", lat: 53.4448, lng: -2.3484,
     subs: [
+      { name: "Trafford", lat: 53.4448, lng: -2.3484 },
       { name: "Stretford", lat: 53.447, lng: -2.308 },
       { name: "Sale", lat: 53.425, lng: -2.324 },
       { name: "Altrincham", lat: 53.387, lng: -2.348 },
@@ -135,6 +136,7 @@ const offices = [
   {
     id: 7, city: "Cheshire", country: "North West", lat: 53.3000, lng: -2.5000,
     subs: [
+      { name: "Cheshire", lat: 53.3000, lng: -2.5000 },
       { name: "Chester", lat: 53.193, lng: -2.893 },
       { name: "Crewe", lat: 53.1, lng: -2.443 },
       { name: "Macclesfield", lat: 53.26, lng: -2.125 },
@@ -247,7 +249,7 @@ export default function Findus() {
               style={{ filter: "invert(0.9) hue-rotate(195deg) saturate(0.9) brightness(0.92)" }}
             >
               <RecenterMap lat={active.lat} lng={active.lng} />
-              
+
               <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
               {/* Main Center Marker (Uses the Custom Orange Icon) */}
