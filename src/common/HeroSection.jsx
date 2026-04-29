@@ -23,12 +23,16 @@ const HeroSection = ({ data }) => {
         className="absolute inset-0 w-[95%] mx-auto rounded-4xl h-full object-cover"
       />
 
+      {/* Overlays — scoped to image bounds */}
+      <div className="absolute inset-0 w-[95%] mx-auto rounded-4xl bg-black/30" />
+      <div className="absolute inset-0 w-[95%] mx-auto rounded-4xl bg-linear-to-t from-black/60 via-black/15 to-transparent" />
+
       {/* Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pb-12 mt-auto">
         <div className="max-w-2xl">
           <a
             href={backLinkHref}
-            className="inline-flex items-center gap-2 text-black font-semibold hover:text-white mb-6"
+            className="inline-flex items-center gap-2 text-white/60 font-semibold hover:text-white mb-6"
           >
             {backLinkLabel}
           </a>
@@ -37,7 +41,7 @@ const HeroSection = ({ data }) => {
             {title}
           </h1>
 
-          <p className="text-[#D4187A] mb-8 max-w-lg">{subtitle}</p>
+          <p className="text-white/75 mb-8 max-w-lg">{subtitle}</p>
 
           <a
            href={`https://wa.me/${Config.whatsappHref}`}
