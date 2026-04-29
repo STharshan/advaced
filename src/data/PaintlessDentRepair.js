@@ -53,22 +53,19 @@ const DentRemovalData = {
         title: "Dent Assessment",
         description:
           "Size, depth and location evaluated to select the right removal technique.",
-        imgSrc:
-          "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80&w=800",
+        imgSrc: "/logo.png",
       },
       {
         title: "Paintless Dent Repair",
         description:
           "Specialist tools used to carefully manipulate the metal back to its original form.",
-        imgSrc:
-          "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800",
+        imgSrc: "/logo.png",
       },
       {
         title: "Final Inspection",
         description:
           "Panel checked under controlled lighting to ensure a flawless, factory quality finish.",
-        imgSrc:
-          "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&q=80&w=800",
+        imgSrc: "/logo.png",
       },
     ],
   },

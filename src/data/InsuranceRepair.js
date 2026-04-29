@@ -53,23 +53,17 @@ const InsuranceRepairsData  = {
                 title: "Damage Assessment",
                 description:
                     "Thorough inspection and documentation of all visible and hidden damage for insurance approval.",
-                imgSrc:
-                    "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80&w=800",
-            },
+                imgSrc: "/logo.png", },
             {
                 title: "Repair Authorisation",
                 description:
                     "We coordinate with your insurance company to get approvals and begin work quickly.",
-                imgSrc:
-                    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800",
-            },
+                imgSrc: "/logo.png", },
             {
                 title: "Repair & Refinish",
                 description:
                     "Expert repairs completed with precision, followed by a flawless, colour-matched finish.",
-                imgSrc:
-                    "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&q=80&w=800",
-            },
+                imgSrc: "/logo.png", },
         ],
     },
 

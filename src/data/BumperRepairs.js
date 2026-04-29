@@ -54,21 +54,21 @@ const DentRemovalData = {
                 description:
                     "Full assessment of cracks, splits, scrapes and structural deformation.",
                 imgSrc:
-                    "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80&w=800",
+                    "/logo.png",
             },
             {
                 title: "Repair & Reshape",
                 description:
                     "Bumper reformed, filled and sanded back to its original profile.",
                 imgSrc:
-                    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800",
+                    "/logo.png",
             },
             {
                 title: "Paint & Blend",
                 description:
                     "Colour-matched finish applied and blended seamlessly into the surrounding panels.",
                 imgSrc:
-                    "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&q=80&w=800",
+                    "/logo.png",
             },
         ],
     },
