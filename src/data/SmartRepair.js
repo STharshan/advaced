@@ -53,23 +53,17 @@ const ScratchRepairData = {
                 title: "Damage Assessment",
                 description:
                     "Scratch depth and paint layer inspection to determine the right repair method.",
-                imgSrc:
-                    "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80&w=800",
-            },
+                imgSrc: "/logo.png",  },
             {
                 title: "Surface Preparation",
                 description:
                     "Area cleaned, sanded and primed to ensure a seamless, lasting repair.",
-                imgSrc:
-                    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800",
-            },
+                imgSrc: "/logo.png", },
             {
                 title: "Paint & Finish",
                 description:
                     "Colour-matched paint applied and blended for an invisible, factory quality result.",
-                imgSrc:
-                    "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&q=80&w=800",
-            },
+                imgSrc: "/logo.png", },
         ],
     },
     // ─── PRICING SECTION ─────────────────────────────────────

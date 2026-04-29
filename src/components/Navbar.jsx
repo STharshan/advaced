@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Phone, Menu, X, ChevronDown } from "lucide-react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Config from "../Config";
 
 const Navbar = () => {
@@ -79,23 +79,15 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`w-full fixed top-0 left-0 z-9999 transition-all duration-300 px-6 md:px-12 ${
-        scrolled 
-          ? "bg-[#08060F] py-2 border-b border-white/5 shadow-lg" 
+      className={`w-full fixed top-0 left-0 z-9999 transition-[padding,box-shadow] duration-300 px-6 md:px-12 ${
+        scrolled
+          ? "bg-[#08060F] py-2 border-b border-white/5 shadow-lg"
+          : isOpen
+          ? "bg-[#08060F] py-5 border-b border-white/10"
           : "bg-transparent py-5 border-b border-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3">
-          <img
-            src="/logo.png"
-            alt="Logo"
-            className={`transition-all duration-300 object-contain ${
-              scrolled ? "w-20 h-16" : "w-24 h-20"
-            }`}
-          />
-        </Link>
-
         {/* Desktop Menu */}
         <div className="hidden xl:flex items-center gap-10 font-medium text-[#B8C0CC]">
           <button onClick={() => performNav("/")} className="hover:text-[#FFB800] transition-colors">
@@ -152,7 +144,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <button className="xl:hidden text-white p-2" onClick={() => setIsOpen(!isOpen)}>
+        <button className="xl:hidden text-white p-2 ml-auto" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>

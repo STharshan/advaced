@@ -53,23 +53,17 @@ const WheelRefurbishmentData = {
                 title: "Damage Inspection",
                 description:
                     "Detailed evaluation of wheel damage including scratches, corrosion, and structural issues.",
-                imgSrc:
-                    "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80&w=800",
-            },
+                imgSrc: "/logo.png",   },
             {
                 title: "Repair & Reshape",
                 description:
                     "Wheels are cleaned, stripped, repaired, and smoothed to restore the original shape.",
-                imgSrc:
-                    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800",
-            },
+                imgSrc: "/logo.png", },
             {
                 title: "Paint & Blend",
                 description:
                     "Colour-matched paint or powder coating applied, followed by a protective layer for long-lasting results.",
-                imgSrc:
-                    "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&q=80&w=800",
-            },
+                imgSrc: "/logo.png",    },
         ],
     },
 
