@@ -8,7 +8,7 @@ const faqData = [
   },
   {
     question: "How long wil it take?",
-    answer: "mart repairs are completed in a day or few hours - bigger jobs 2-3 days we will tell u so not left guessing."
+    answer: "Smart repairs are completed in a day or few hours - bigger jobs 2-3 days we will tell u so not left guessing."
   },
   {
     question: "Guarantee?",
@@ -20,7 +20,8 @@ const faqData = [
   },
   {
     question: "How do I get a quote?",
-    answer: "add the cta to form Fill."
+    // answer: "Send us a few photos of the damage via WhatsApp or fill out the contact form below. We'll get back to you quickly with a clear, no-obligation quote.",
+    cta: { label: "WhatsApp Us", href: "https://api.whatsapp.com/send?phone=447000000000" }
   },
   {
     question: "Price match guarantee?",
@@ -84,15 +85,25 @@ const FAQSection = () => {
                   </div>
                 </button>
 
-                <div 
+                <div
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                    openIndex === index ? 'max-h-[36rem] opacity-100 md:max-h-80' : 'max-h-0 opacity-0'
+                    openIndex === index ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
                   }`}
                 >
                   <div className="px-4 pb-5 md:px-8 md:pb-8">
                     <p className="max-w-full text-sm leading-7 font-medium text-[#B8C0CC] sm:text-base md:max-w-[95%] md:text-lg">
                       {faq.answer}
                     </p>
+                    {faq.cta && (
+                      <a
+                        href={faq.cta.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 inline-flex items-center gap-2 rounded-full px-6 py-2.5 text-sm font-bold text-white bg-linear-to-r from-[#7C2FC0] to-[#D4187A] hover:from-[#D4187A] hover:to-[#FF6D00] hover:scale-105 shadow-md shadow-[#7C2FC0]/30 transition-all duration-200"
+                      >
+                        {faq.cta.label}
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

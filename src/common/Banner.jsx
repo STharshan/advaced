@@ -4,16 +4,24 @@ import Config from "../Config";
 
 const Banner = ({ data }) => {
   const { backgroundImage, heading, subheading, ctaLabel } = data;
+  const src = backgroundImage.startsWith('/') || backgroundImage.startsWith('http')
+    ? backgroundImage
+    : '/' + backgroundImage;
 
   return (
     <section className="bg-[#08060F] py-16 md:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto flex justify-center">
 
         {/* Main Card */}
-        <div
-          className="relative w-full max-w-6xl aspect-video md:aspect-2/1 overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl transition-all duration-300 bg-cover bg-center bg-no-repeat group"
-          style={{ backgroundImage: `url(${backgroundImage})` }}
-        >
+        <div className="relative w-full max-w-6xl overflow-hidden rounded-2xl md:rounded-3xl shadow-2xl group">
+
+          {/* Image — defines container height, never cropped */}
+          <img
+            src={src}
+            alt=""
+            className="w-full h-auto block"
+          />
+
           {/* Overlay */}
           <div className="absolute inset-0 bg-linear-to-tr from-[#08060F]/90 via-[#08060F]/40 to-[#08060F]/10 transition-opacity duration-500 group-hover:opacity-70" />
 
@@ -30,10 +38,11 @@ const Banner = ({ data }) => {
             <a
               href={`https://wa.me/${Config.whatsappHref}`}
               target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center bg-[#FF6D00] text-white px-6 py-2.5 sm:px-8 sm:py-3 rounded-xl text-xs sm:text-sm font-semibold hover:bg-[#D4187A] transition-colors shadow-lg"
             >
               <span className="mr-2">{ctaLabel}</span>
-              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" aria-hidden="true" />
             </a>
           </div>
         </div>

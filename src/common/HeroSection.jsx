@@ -17,7 +17,7 @@ const HeroSection = ({ data }) => {
 
       {/* Background Image */}
       <img
-        src={backgroundImage}
+        src={backgroundImage.startsWith('/') || backgroundImage.startsWith('http') ? backgroundImage : '/' + backgroundImage}
         alt={title}
         loading="lazy"
         className="absolute inset-0 w-[95%] mx-auto rounded-4xl h-full object-cover"
@@ -37,7 +37,7 @@ const HeroSection = ({ data }) => {
             {backLinkLabel}
           </a>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl text-white leading-none mb-6">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl leading-none mb-6 text-transparent bg-clip-text bg-linear-to-r from-[#7C2FC0] via-[#D4187A] to-[#FF6D00]">
             {title}
           </h1>
 

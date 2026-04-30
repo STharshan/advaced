@@ -59,7 +59,9 @@ export default function HeroSection() {
                             </div>
 
                             <h1 className="text-5xl md:text-6xl font-bold leading-tight uppercase">
-                                ADVANCED <br />
+                                <span className="text-transparent bg-clip-text bg-linear-to-r from-[#7C2FC0] via-[#D4187A] to-[#FF6D00]">
+                                    ADVANCED
+                                </span><br />
                                 <span className="text-transparent bg-clip-text bg-linear-to-r from-[#7C2FC0] via-[#D4187A] to-[#FF6D00]">
                                     AUTOBODY SOLUTIONS.
                                 </span>
