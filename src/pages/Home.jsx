@@ -4,6 +4,7 @@ import ServicesSection from '../components/ServiceSection'
 import ContactSection from '../components/ContactSection'
 import FAQSection from '../components/FaqSection'
 import GallerySection from '../components/GallerySection'
+import VideoShowcase from '../components/VideoShowcase'
 import TestimonialsSection from '../components/Testimonial/TestimonialSection'
 import ScrollingTestimonials from '../components/Testimonial/ScrollTest'
 import Findus from '../components/Findus'
@@ -16,6 +17,7 @@ const Home = () => {
       <FeaturesSection />
       <ServicesSection />
       <GallerySection />
+      <VideoShowcase />
       <TestimonialsSection />
       <ScrollingTestimonials />
       <ContactSection />
